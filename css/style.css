@@ -7,7 +7,7 @@
     width: 100%;
   }
   
-  input[type="mail"], input[type="password"] {
+  input[type="email"], input[type="password"] {
     width: 40%;
   }
 }
@@ -30,7 +30,7 @@
     margin-top: 20px;
   }
   
-  input[type="mail"], input[type="password"] {
+  input[type="email"], input[type="password"] {
     width: 80%;
   }
 }
@@ -55,7 +55,7 @@
     width: 70%;
   }
   
-  input[type="mail"], input[type="password"] { 
+  input[type="email"], input[type="password"] { 
     width: 80%;
   }
 }
@@ -149,8 +149,15 @@
             box-sizing: border-box;    
   } 
   
-  input[type="mail"], input[type="password"] {
+  input[type="email"], input[type="password"] {
     margin: 5px;
+    padding: 5px;
+    text-align: center;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px; 
+    border: none;
+    box-shadow: 0 0 2px #999;
        -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
         -ms-box-sizing: border-box;
@@ -169,8 +176,8 @@
     padding: 8px;
     font: bold;
     -webkit-border-radius: 5px 20px 5px;
-    -moz-border-radius: 5px 20px 5px;
-    border-radius: 5px 20px 5px; 
+       -moz-border-radius: 5px 20px 5px;
+            border-radius: 5px 20px 5px; 
     cursor: pointer;
   }
   
