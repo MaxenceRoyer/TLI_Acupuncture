@@ -249,10 +249,25 @@
 		margin: 10px;
     }
 		
-	#Inscription {
+	#Inscription, .debug, .stripped {
 		border: 1px dashed #bdc3c7;
 		margin: 5%;
+		word-wrap: break-word;
 	}
+		
+		.stripped p {
+			text-align: justify;
+			padding-right: 2%;
+			padding-left: 2%;
+		}
+		
+		.stripped ul {
+			margin: 2%;	
+		}
+		
+		.stripped li {
+			text-align: justify;
+		}
 		
 	::-webkit-input-placeholder {
 	   color: #666;

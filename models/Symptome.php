@@ -4,7 +4,8 @@
 		var $desc = "";
 		
 		// Construct
-		function __construct($desc) {
+		function __construct($idS, $desc) {
+			$this->idS = $idS;
 		    $this->desc = $desc;
 	    }
 		

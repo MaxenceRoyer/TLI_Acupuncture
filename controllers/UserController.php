@@ -13,7 +13,7 @@
 			$sql =  'SELECT * FROM user ORDER BY idU';
 			
 			$arrayUsers = array();
-			foreach  (self::request($sql) as $row) {
+			foreach  (Bdd::request($sql) as $row) {
 				$User = new User($row['idU'], $row['pseudonymeU'], $row['emailU'], $row['passwordU']);
 				array_push($arrayUsers, $User);
 		    }
@@ -26,8 +26,8 @@
 			try {
 				$sql =  'SELECT * FROM user WHERE idU = ?';
 
-				$req = self::prepare($sql);
-				if (self::execute($req, array($id))) {
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($id))) {
 					if ($row = $req->fetch()) {
 						$user = new User($row['idU'], $row['pseudonymeU'], $row['emailU'], $row['passwordU']);
 						$req->closeCursor();
@@ -41,7 +41,6 @@
 			} catch(Exception $e) {
 				die('An error has occured : '.$e->getMessage());
 			}
-
 		}
 		
 		// Function called to recover a user by is email
@@ -49,8 +48,8 @@
 			try{
 				$sql =  'SELECT * FROM user WHERE emailU = ?';
 
-				$req = self::prepare($sql);
-				if(self::execute($req, array($email))) {
+				$req = Bdd::prepare($sql);
+				if(Bdd::execute($req, array($email))) {
 					if ($row = $req->fetch()) {
 						$user = new User($row['idU'], $row['pseudonymeU'], $row['emailU'], $row['passwordU']);
 						$req->closeCursor();
@@ -71,8 +70,8 @@
 			try{
 				$sql =  'SELECT * FROM user WHERE pseudonymeU = ?';
 
-				$req = self::prepare($sql);
-				if (self::execute($req, array($pseudo))) {
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($pseudo))) {
 					if ($row = $req->fetch()) {
 						$user = new User($row['idU'], $row['pseudonymeU'], $row['emailU'], $row['passwordU']);
 						$req->closeCursor();
@@ -93,8 +92,8 @@
 			try{
 				$sql =  'SELECT emailU FROM user WHERE emailU = ?';
 
-				$req = self::prepare($sql);
-				if (self::execute($req, array($email))) {
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($email))) {
 					if ($row = $req->fetch() && $req->rowCount() == 1) {
 						$req->closeCursor();
 						return true;
@@ -115,8 +114,8 @@
 			try{
 				$sql =  'SELECT emailU FROM user WHERE pseudonymeU = ?';
 
-				$req = self::prepare($sql);
-				if (self::execute($req, array($pseudo))) {
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($pseudo))) {
 					if ($row = $req->fetch() && $req->rowCount() == 1) {
 						$req->closeCursor();
 						return true;
@@ -137,8 +136,8 @@
 			try{
 				$sql = 'UPDATE user SET emailU = ? WHERE idU = ?';
 
-				$req = self::prepare($sql);
-				if (self::execute($req, array($email, $id)) && $req->rowCount()) {
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($email, $id)) && $req->rowCount()) {
 					$user = $this->getUserById($id);
 					$req->closeCursor();
 					return $user;
@@ -155,8 +154,8 @@
 			try{
 				$sql = 'UPDATE user SET emailU = ? WHERE idU = ?';
 
-				$req = self::prepare($sql);
-				if (self::execute($req, array($user->$pseudonymeU, $user->$emailU, $user->$idU)) && $req->rowCount()) {
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($user->$pseudonymeU, $user->$emailU, $user->$idU)) && $req->rowCount()) {
 					$user = $this->getUserById($id);
 					$req->closeCursor();
 					return $user;
@@ -173,8 +172,8 @@
 			try{
 				$sql = 'UPDATE user SET passwordU = ? WHERE idU = ?';
 
-				$req = self::prepare($sql);
-				if (self::execute($req, array($password, $id)) && $req->rowCount() == 1) {
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($password, $id)) && $req->rowCount() == 1) {
 					$user = $this->getUserById($id);
 					$req->closeCursor();
 					return $user;
@@ -191,8 +190,8 @@
 			try{
 				$sql = 'DELETE FROM user WHERE idU = ?';
 
-				$req = self::prepare($sql);
-				if (self::execute($req, array($id)) && $req->rowCount() == 1) {
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($id)) && $req->rowCount() == 1) {
 					$req->closeCursor();
 					return true;
 				} else {
