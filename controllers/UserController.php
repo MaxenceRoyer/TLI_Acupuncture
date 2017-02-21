@@ -1,12 +1,34 @@
 <?php
-	include_once("database/Base.php");
-	include_once("models/User.php");
+	include_once(dirname( __FILE__ ) . "/../database/Base.php");
+	include_once(dirname( __FILE__ ) . "/../models/User.php");
 
 	class UserController extends Bdd {	
 		// Construct
 		function __construct() {
 			parent::__construct();
 	    }
+		
+		// Function called to try to connect an user
+		public function connect($passwordMd5, $email) {
+			try {
+				$sql =  'SELECT passwordU FROM user WHERE emailU = ?';
+			
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($email))) {
+					if ($row = $req->fetch()) {
+						if (md5($row["passwordU"]) == $passwordMd5) {
+							return true;
+						}
+					} else {
+						return false;
+					}
+				}
+				
+				return false;
+			} catch (Exception $e) {
+				
+			}
+		}
 		
 		// Function called to recover all users of the DB
 		public function getAllUsers() {

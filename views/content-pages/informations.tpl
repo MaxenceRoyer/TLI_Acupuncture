@@ -22,5 +22,8 @@ principales pathologies en acupuncture</li>
 			  </section>
 			  <section class="stripped">
 				  <h4>Webographie</h4>
+				  <p>
+				  	Implémentation JS de l'algorithme de cryptage MD5 : <a href="http://membres-liglab.imag.fr/PPerso/membres/donsez/cours/exemplescourstechnoweb/js_securehash/" target="_blank">Javascript MD5</a>
+				  </p>
 			  </section>
           </div>

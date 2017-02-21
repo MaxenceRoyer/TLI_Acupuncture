@@ -6,7 +6,8 @@
 		var $desc = "";
 		
 		// Construct
-		function __construct($mer,$type,$desc) {
+		function __construct($idP, $mer, $type, $desc) {
+			$this->idP = $idP;
 		    $this->mer = $mer;
 			$this->type = $type;
 			$this->desc = $desc;

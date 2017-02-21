@@ -19,7 +19,7 @@
 				if (Bdd::execute($req, null)) {
 					$row = $req->fetchAll();
 					for ($i = 0; $i < sizeof($row); $i++) {
-						$Symptome = new Symptome($row[$i]['idS'], $row[$i]['desc']);
+						$Symptome = new Symptome($row[$i]['idS'], $row[$i]['desc'], null);
 						array_push($arraySymptomes, $Symptome);
 					}
 				}
@@ -39,7 +39,7 @@
 				$req = Bdd::prepare($sql);
 				if (Bdd::execute($req, array($id))) {
 					if ($row = $req->fetch()) {
-						$symptome = new Symptome($row['idS'], $row['desc']);
+						$symptome = new Symptome($row['idS'], $row['desc'], null);
 						$req->closeCursor();
 						return $symptome;
 					} else {
@@ -52,13 +52,5 @@
 				die('An error has occured : '.$e->getMessage());
 			}
 		}
-		
-		// ...
-		public function getSymptomesByPatho() {
-			
-		}
-		
-		// TO DO : Features - If we have more time
-		// TO DO : Add create, update and delete functions ....
 	}
 ?>
