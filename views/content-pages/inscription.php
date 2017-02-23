@@ -24,10 +24,11 @@
                   </ul>
 				  <?php
 				  	include_once("controllers/UserController.php");
+                    include_once("models/User.php");
 				  	$UserController = new UserController();
 				  
-				  	echo "Tests Debug - Temporaire - GetAllUsers() <hr />";
-				 	var_dump($UserController->getAllUsers());
+				  	echo "Tests Debug - Temporaire - createUser() <hr />";
+				 	var_dump($UserController->createUser(new User(null, "Blabla", "bla@bla.fr", md5("Blablaa"))));
 				  	echo "<br />";
 				  
 				  	echo "Tests Debug - Temporaire - GetUserById() <hr />";

@@ -132,41 +132,55 @@
 			}
 		}
 		
+        // Function called to create a user 
+		public function createUser($user) {
+			try {
+                        echo("1");
+                if (!$this->isPseudoExist($user->getPseudonymeU()) or !$this->isEmailExist($user->getEmailU())) {
+                        echo("2");
+                    $sql = 'INSERT INTO user(pseudonymeU, emailU, passwordU) VALUES (?, ?, ?)';
+                        echo("3");
+
+                    $req = self::prepare($sql);
+                    if (self::execute($req, array($user->getPseudonymeU(), $user->getEmailU(), $user->getPasswordU()))) {
+                        echo("4");
+                        $user = $this->getUserById(self::lastIndex());
+                        var_dump($user);
+                        $req->closeCursor();
+                        return $user;
+                    } else {
+                        echo("5");
+                        $req->closeCursor();
+                        return false;
+                    }
+                }
+			} catch(Exception $e) {
+                
+                        echo("6");
+				die('An error has occured : '.$e->getMessage());
+			}
+		}
+        
 		// Function called to update a user email
 		public function updateUserEmailById($id, $email) {
 			try{
-				$sql = 'UPDATE user SET emailU = ? WHERE idU = ?';
+                if($this->isEmailExist($email)){
+                    $sql = 'UPDATE user SET emailU = ? WHERE idU = ?';
 
-				$req = self::prepare($sql);
-				if (self::execute($req, array($email, $id)) && $req->rowCount()) {
-					$user = $this->getUserById($id);
-					$req->closeCursor();
-					return $user;
-				} else {
-					return false;
-				}
+                    $req = self::prepare($sql);
+                    if (self::execute($req, array($email, $id)) && $req->rowCount() == 1) {
+                        $user = $this->getUserById($id);
+                        $req->closeCursor();
+                        return $user;
+                    } else {
+					    $req->closeCursor();
+                        return false;
+                    }
+                }
 			} catch(Exception $e) {
 				die('An error has occured : '.$e->getMessage());
 			}
 		}
-		
-		// Function called to create a user 
-		/*public function createUser($user) {
-			try{
-				$sql = 'UPDATE user SET emailU = ? WHERE idU = ?';
-
-				$req = self::prepare($sql);
-				if (self::execute($req, array($user->$pseudonymeU, $user->$emailU, $user->$idU)) && $req->rowCount()) {
-					$user = $this->getUserById($id);
-					$req->closeCursor();
-					return $user;
-				} else {
-					return false;
-				}
-			} catch(Exception $e) {
-				die('An error has occured : '.$e->getMessage());
-			}
-		}/*/
 		
 		// Function called to update a user password
 		public function updateUserPasswordById($id, $password) {
@@ -179,6 +193,7 @@
 					$req->closeCursor();
 					return $user;
 				} else {
+					$req->closeCursor();
 					return false;
 				}
 			} catch(Exception $e) {
@@ -196,6 +211,7 @@
 					$req->closeCursor();
 					return true;
 				} else {
+					$req->closeCursor();
 					return false;
 				}
 			} catch(Exception $e) {
