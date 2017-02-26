@@ -249,10 +249,25 @@
 		margin: 10px;
     }
 		
-	#Inscription {
+	#Inscription, .debug, .stripped {
 		border: 1px dashed #bdc3c7;
 		margin: 5%;
+		word-wrap: break-word;
 	}
+		
+		.stripped p {
+			text-align: justify;
+			padding-right: 2%;
+			padding-left: 2%;
+		}
+		
+		.stripped ul {
+			margin: 2%;	
+		}
+		
+		.stripped li {
+			text-align: justify;
+		}
 		
 	::-webkit-input-placeholder {
 	   color: #666;
@@ -269,4 +284,42 @@
 	:-ms-input-placeholder {  
 	   color: #666;  
 	}
+		
+		table {
+			text-align: left;
+			margin: auto;
+			border-collapse: collapse;
+			margin-bottom: 30px;
+		}
+		
+		td, th {
+			padding-right: 10px;
+			padding-left: 10px;
+		}
+		
+		th {
+			font-size: 15px;
+		}
+		
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+		
+		.span_error {
+			color: #e74c3c;
+			font-size : 11px;
+			font-weight: bold;
+		}
+		
+		#disconnect {
+			font-weight: bold;
+			font-size: 12px;
+			text-transform: uppercase;
+			color: #111;
+		}
+		
+		#disconnect:hover {
+			cursor: pointer;
+			color: #555;
+		}
 }

@@ -1,6 +1,6 @@
 <?php
-	include_once("database/Base.php");
-	include_once("models/User.php");
+	include_once(dirname( __FILE__ ) . "/../database/Base.php");
+	include_once(dirname( __FILE__ ) . "/../models/User.php");
 
 	class UserController extends Bdd {	
 		// Construct
@@ -8,12 +8,34 @@
 			parent::__construct();
 	    }
 		
+		// Function called to try to connect an user
+		public function connect($passwordMd5, $email) {
+			try {
+				$sql =  'SELECT passwordU FROM user WHERE emailU = ?';
+			
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($email))) {
+					if ($row = $req->fetch()) {
+						if (md5($row["passwordU"]) == $passwordMd5) {
+							return true;
+						}
+					} else {
+						return false;
+					}
+				}
+				
+				return false;
+			} catch (Exception $e) {
+				
+			}
+		}
+		
 		// Function called to recover all users of the DB
 		public function getAllUsers() {
 			$sql =  'SELECT * FROM user ORDER BY idU';
 			
 			$arrayUsers = array();
-			foreach  (self::request($sql) as $row) {
+			foreach  (Bdd::request($sql) as $row) {
 				$User = new User($row['idU'], $row['pseudonymeU'], $row['emailU'], $row['passwordU']);
 				array_push($arrayUsers, $User);
 		    }
@@ -26,8 +48,8 @@
 			try {
 				$sql =  'SELECT * FROM user WHERE idU = ?';
 
-				$req = self::prepare($sql);
-				if (self::execute($req, array($id))) {
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($id))) {
 					if ($row = $req->fetch()) {
 						$user = new User($row['idU'], $row['pseudonymeU'], $row['emailU'], $row['passwordU']);
 						$req->closeCursor();
@@ -41,7 +63,6 @@
 			} catch(Exception $e) {
 				die('An error has occured : '.$e->getMessage());
 			}
-
 		}
 		
 		// Function called to recover a user by is email
@@ -49,8 +70,8 @@
 			try{
 				$sql =  'SELECT * FROM user WHERE emailU = ?';
 
-				$req = self::prepare($sql);
-				if(self::execute($req, array($email))) {
+				$req = Bdd::prepare($sql);
+				if(Bdd::execute($req, array($email))) {
 					if ($row = $req->fetch()) {
 						$user = new User($row['idU'], $row['pseudonymeU'], $row['emailU'], $row['passwordU']);
 						$req->closeCursor();
@@ -71,8 +92,8 @@
 			try{
 				$sql =  'SELECT * FROM user WHERE pseudonymeU = ?';
 
-				$req = self::prepare($sql);
-				if (self::execute($req, array($pseudo))) {
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($pseudo))) {
 					if ($row = $req->fetch()) {
 						$user = new User($row['idU'], $row['pseudonymeU'], $row['emailU'], $row['passwordU']);
 						$req->closeCursor();
@@ -93,8 +114,8 @@
 			try{
 				$sql =  'SELECT emailU FROM user WHERE emailU = ?';
 
-				$req = self::prepare($sql);
-				if (self::execute($req, array($email))) {
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($email))) {
 					if ($row = $req->fetch() && $req->rowCount() == 1) {
 						$req->closeCursor();
 						return true;
@@ -115,8 +136,8 @@
 			try{
 				$sql =  'SELECT emailU FROM user WHERE pseudonymeU = ?';
 
-				$req = self::prepare($sql);
-				if (self::execute($req, array($pseudo))) {
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($pseudo))) {
 					if ($row = $req->fetch() && $req->rowCount() == 1) {
 						$req->closeCursor();
 						return true;
@@ -135,23 +156,17 @@
         // Function called to create a user 
 		public function createUser($user) {
 			try {
-                        echo("1");
                 if (!$this->isPseudoExist($user->getPseudonymeU()) or !$this->isEmailExist($user->getEmailU())) {
-                        echo("2");
                     $sql = 'INSERT INTO user(pseudonymeU, emailU, passwordU) VALUES (?, ?, ?)';
-                        echo("3");
 
-                    $req = self::prepare($sql);
-                    if (self::execute($req, array($user->getPseudonymeU(), $user->getEmailU(), $user->getPasswordU()))) {
-                        echo("4");
+                    $req = Bdd::prepare($sql);
+                    if (Bdd::execute($req, array($user->getPseudonymeU(), $user->getEmailU(), $user->getPasswordU()))) {
                         $user = $this->getUserById(self::lastIndex());
                         var_dump($user);
                         $req->closeCursor();
                         return $user;
                     } else {
-                        echo("5");
-                        $req->closeCursor();
-                        return false;
+                        throw new Exception("An error has occured during user creation.");
                     }
                 }
 			} catch(Exception $e) {
@@ -167,14 +182,13 @@
                 if($this->isEmailExist($email)){
                     $sql = 'UPDATE user SET emailU = ? WHERE idU = ?';
 
-                    $req = self::prepare($sql);
-                    if (self::execute($req, array($email, $id)) && $req->rowCount() == 1) {
+                    $req = Bdd::prepare($sql);
+                    if (Bdd::execute($req, array($email, $id)) && $req->rowCount() == 1) {
                         $user = $this->getUserById($id);
                         $req->closeCursor();
                         return $user;
                     } else {
-					    $req->closeCursor();
-                        return false;
+					    throw new Exception("An error has occured during the user update.");
                     }
                 }
 			} catch(Exception $e) {
@@ -187,8 +201,8 @@
 			try{
 				$sql = 'UPDATE user SET passwordU = ? WHERE idU = ?';
 
-				$req = self::prepare($sql);
-				if (self::execute($req, array($password, $id)) && $req->rowCount() == 1) {
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($password, $id)) && $req->rowCount() == 1) {
 					$user = $this->getUserById($id);
 					$req->closeCursor();
 					return $user;
@@ -206,8 +220,8 @@
 			try{
 				$sql = 'DELETE FROM user WHERE idU = ?';
 
-				$req = self::prepare($sql);
-				if (self::execute($req, array($id)) && $req->rowCount() == 1) {
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($id)) && $req->rowCount() == 1) {
 					$req->closeCursor();
 					return true;
 				} else {

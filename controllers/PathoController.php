@@ -1,23 +1,29 @@
-
 <?php
 	include_once("database/Base.php");
 	include_once("models/Patho.php");
 
-	class PathoControler extends Bdd {	
+	class PathoController extends Bdd {	
 		// Construct
 		function __construct() {
 			parent::__construct();
 	    }
 		
 		// Function called to recover all pathologies of the DB
-		public function getAllPatho() {
-			$sql =  'SELECT * FROM patho ORDER BY idP';
+		public function getAllPatho($limit) {
+			$sql =  'SELECT * FROM patho ORDER BY idP ASC LIMIT 0, :limit';
 			
+			$req = Bdd::prepare($sql);
+			$req->bindParam(':limit', $limit, PDO::PARAM_INT);
 			$arrayPatho = array();
-			foreach  (self::request($sql) as $row) {
-				$Patho = new Patho($row['idP'], $row['mer'], $row['type'], $row['desc']);
-				array_push($arrayPatho, $Patho);
+			if  (Bdd::execute($req, null)) {
+				$row = $req->fetchAll();
+				for ($i = 0; $i < sizeof($row); $i++) {
+					$Patho = new Patho($row[$i]['idP'], $row[$i]['mer'], $row[$i]['type'], $row[$i]['desc']);
+					array_push($arrayPatho, $Patho);
+				}
 		    }
+			
+			$req->closeCursor();
 			
 			return $arrayPatho;
 		}
@@ -27,8 +33,8 @@
 			try {
 				$sql =  'SELECT * FROM patho WHERE idP = ?';
 
-				$req = self::prepare($sql);
-				if (self::execute($req, array($id))) {
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($id))) {
 					if ($row = $req->fetch()) {
 						$patho = new Patho($row['idP'], $row['mer'], $row['type'], $row['desc']);
 						$req->closeCursor();
@@ -50,8 +56,8 @@
 			try{
 				$sql =  'SELECT * FROM patho WHERE mer = ?';
 
-				$req = self::prepare($sql);
-				if(self::execute($req, array($mer))) {
+				$req = Bdd::prepare($sql);
+				if(Bdd::execute($req, array($mer))) {
 					if ($row = $req->fetch()) {
 						$patho = new Patho($row['idP'], $row['mer'], $row['type'], $row['desc']);
 						$req->closeCursor();
@@ -72,8 +78,8 @@
 			try{
 				$sql =  'SELECT * FROM patho WHERE type = ?';
 
-				$req = self::prepare($sql);
-				if (self::execute($req, array($type))) {
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($type))) {
 					if ($row = $req->fetch()) {
 						$patho = new Patho($row['idP'], $row['mer'], $row['type'], $row['desc']);
 						$req->closeCursor();
@@ -94,8 +100,8 @@
 			try{
 				$sql =  'SELECT * FROM patho WHERE desc = ?';
 
-				$req = self::prepare($sql);
-				if (self::execute($req, array($desc))) {
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($desc))) {
 					if ($row = $req->fetch()) {
 						$patho = new Patho($row['idP'], $row['mer'], $row['type'], $row['desc']);
 						$req->closeCursor();

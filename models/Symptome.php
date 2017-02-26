@@ -2,10 +2,15 @@
 	class Symptome {
 		var $idS = -1;
 		var $desc = "";
+		var $arrayKeyWords = null;
 		
 		// Construct
-		function __construct($desc) {
+		function __construct($idS, $desc, $arrayKeyWords) {
+			$this->idS = $idS;
 		    $this->desc = $desc;
+			if (!is_null($arrayKeyWords)) {
+				$this->arrayKeyWords = $arrayKeyWords;
+			}
 	    }
 		
 		// Getters
@@ -17,9 +22,17 @@
 			return $this->desc;
 		}
 		
+		function getArrayKeyWords() {
+			return $this->arrayKeyWords;
+		}
+		
 		// Setters
 		function setDesc($desc) {
 			$this->desc = $desc;
+		}
+		
+		function setArrayKeyWords($arrayKeyWords) {
+			$this->arrayKeyWords = $arrayKeyWords;
 		}
 	} 
 ?>
