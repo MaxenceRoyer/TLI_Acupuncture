@@ -1,6 +1,6 @@
 <?php
-	include_once("database/Base.php");
-	include_once("models/Patho.php");
+	include_once(dirname( __FILE__ ) . "/../database/Base.php");
+	include_once(dirname( __FILE__ ) . "/../models/Patho.php");
 
 	class PathoController extends Bdd {	
 		// Construct
@@ -10,10 +10,17 @@
 		
 		// Function called to recover all pathologies of the DB
 		public function getAllPatho($limit) {
-			$sql =  'SELECT * FROM patho ORDER BY idP ASC LIMIT 0, :limit';
-			
-			$req = Bdd::prepare($sql);
-			$req->bindParam(':limit', $limit, PDO::PARAM_INT);
+			if ($limit != 'NONE') {
+				$sql =  'SELECT * FROM patho ORDER BY idP ASC LIMIT 0, :limit';
+
+				$req = Bdd::prepare($sql);
+				$req->bindParam(':limit', $limit, PDO::PARAM_INT);
+			} else {
+				$sql =  'SELECT * FROM patho ORDER BY idP ASC';
+
+				$req = Bdd::prepare($sql);
+			}
+		
 			$arrayPatho = array();
 			if  (Bdd::execute($req, null)) {
 				$row = $req->fetchAll();

@@ -7,7 +7,7 @@
         width: 100%;
       }
 
-      input[type="email"], input[type="text"], input[type="password"] {
+      input[type="email"], input[type="text"], input[type="password"], input[type="search"] {
         width: 40%;
       }
     }
@@ -30,7 +30,7 @@
         margin-top: 20px;
       }
 
-      input[type="email"], input[type="text"], input[type="password"] {
+      input[type="email"], input[type="text"], input[type="password"], input[type="search"] {
         width: 80%;
       }
     }
@@ -55,7 +55,7 @@
         width: 70%;
       }
 
-      input[type="email"], input[type="text"], input[type="password"] { 
+      input[type="email"], input[type="text"], input[type="password"], input[type="search"] { 
         width: 80%;
       }
     }
@@ -151,7 +151,7 @@
                 box-sizing: border-box;    
       } 
 
-      input[type="email"], input[type="text"], input[type="password"] {
+      input[type="email"], input[type="text"], input[type="password"], input[type="search"] {
         margin: 5px;
         padding: 10px;
         text-align: center;
@@ -305,6 +305,22 @@
 			background-color: #f2f2f2;
 		}
 		
+		table .idPatho {
+			width: 10%;
+		}
+		
+		table .merPatho {
+			width: 20%;
+		}
+		
+		table .typePatho {
+			width: 20%;
+		}
+		
+		table .descPatho {
+			width: 50%;
+		}
+		
 		.span_error {
 			color: #e74c3c;
 			font-size : 11px;
@@ -321,5 +337,11 @@
 		#disconnect:hover {
 			cursor: pointer;
 			color: #555;
+		}
+		
+		#containerPatho {
+			max-height: 500px;
+			overflow: auto;
+			margin-top: 30px;
 		}
 }

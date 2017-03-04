@@ -3,5 +3,5 @@
 
 	$PathoController = new PathoController();
 
-	$allPatho = $PathoController->getAllPatho(10);
+	$allPatho = $PathoController->getAllPatho("NONE");
 ?>
