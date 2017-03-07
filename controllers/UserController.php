@@ -26,7 +26,7 @@
 				
 				return false;
 			} catch (Exception $e) {
-				
+				die('An error has occured : '.$e->getMessage());
 			}
 		}
 		

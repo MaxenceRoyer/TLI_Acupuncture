@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-02-17 15:09:05
+/* Smarty version 3.1.30, created on 2017-03-06 10:53:45
   from "C:\wamp64\www\tli-acupuncture\views\content-pages\inscription.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58a71211716b71_87505478',
+  'unifunc' => 'content_58bd3fb9600e80_05545644',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e0c68efeef0c68e60a24ebccc203536ded63ab9c' => 
     array (
       0 => 'C:\\wamp64\\www\\tli-acupuncture\\views\\content-pages\\inscription.tpl',
-      1 => 1487319157,
+      1 => 1488797460,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58a71211716b71_87505478 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58bd3fb9600e80_05545644 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
           <!-- Content -->
           <div id="content_page" role="main">
@@ -47,5 +47,13 @@ function content_58a71211716b71_87505478 (Smarty_Internal_Template $_smarty_tpl)
                     </li>
                   </ul>
               </form>
+			  
+				<?php echo '<script'; ?>
+ type="text/javascript" src="views/statics/js/md5.js"><?php echo '</script'; ?>
+> 
+				<?php echo '<script'; ?>
+ type="text/javascript" src="views/statics/js/inscription.js"><?php echo '</script'; ?>
+>
+			  
           </div><?php }
 }

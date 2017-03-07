@@ -23,4 +23,8 @@
                     </li>
                   </ul>
               </form>
+			  {literal}
+				<script type="text/javascript" src="views/statics/js/md5.js"></script> 
+				<script type="text/javascript" src="views/statics/js/inscription.js"></script>
+			  {/literal}
           </div>
