@@ -66,7 +66,18 @@
 			'allPatho' => $allPatho
 		));
 		$smarty->display("views/content-pages/debug-patho-controller.tpl");
-	} else { // Default
+	} else if (strpos($_SERVER['REQUEST_URI'], '?debug-symptpatho-controller')) { // Debug-user-controller
+		include_once("scripts_php/content-pages/DebugSymptPathoController.php");
+		$smarty->assign(array(
+			'allSymptPathos' => $allSymptPathos,
+			'symptpathoIdS' => $symptpathoIdS,
+			'symptpathoIdP' => $symptpathoIdP,
+			'symptpathoAggr' => $symptpathoAggr,
+			'userPasswordUpdate' => $userPasswordUpdate,
+			'userEmailUpdate' => $userEmailUpdate,
+			'symptpathoDelete' => $symptpathoDelete
+		));
+		$smarty->display("views/content-pages/debug-user-controller.tpl");} else { // Default
 		$smarty->display("views/content-pages/home.tpl");
 	} 
 

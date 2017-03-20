@@ -2,197 +2,172 @@
 	include_once("database/Base.php");
 	include_once("models/SymptPatho.php");
 
-	class SymptPathoControler extends Bdd {	
+	class SymptPathoController extends Bdd {	
 		// Construct
 		function __construct() {
 			parent::__construct();
 	    }
 		
-		// Function called to recover all pathologies of the DB
-		public function getAllSymptPatho() {
-			$sql =  'SELECT * FROM patho ORDER BY idP';
-			
-			$arraySymptPatho = array();
-			foreach  (self::request($sql) as $row) {
-				$SymptPatho = new SymptPatho($row['idP'], $row['mer'], $row['type'], $row['desc']);
-				array_push($arraySymptPatho, $SymptPatho);
-		    }
-			
-			return $arraySymptPatho;
-		}
+		// Function called to recover all symptpatho of the DataBase
+		public function getAllSymptPathos($limit) {
+			try{
+                $sql =  'SELECT * FROM symptpatho LIMIT 0, :limit';
+                
+                $req = Bdd::prepare($sql);
+                $req->bindParam(':limit', $limit, PDO::PARAM_INT);
+                $arraySymptPatho = array();
+                if  (Bdd::execute($req, null)) {
+                    $row = $req->fetchAll();
+                    for ($i = 0; $i < sizeof($row); $i++) {
+                        $SymptPatho = new SymptPatho($row[$i]['idS'], $row[$i]['idP'], $row[$i]['aggr']);
+                        array_push($arraySymptPatho, $SymptPatho);
+                    }
+                    $req->closeCursor();
+                    return $arraySymptPatho;
+                } else {
+					throw new Exception("An error has occured during recover all symptpatho."); 
+				}
+                
+            } catch(Exception $e) {
+				die('An error has occured : '.$e->getMessage());
+			}
+        }
 		
-		// Function called to recover a patho by is ID
-		public function getSymptPathoById($id) {
+		// Function called to recover a symptpatho by  idS and idP
+		public function getSymptPathoByIdSAndIdP($idS, idP) {
 			try {
-				$sql =  'SELECT * FROM patho WHERE idP = ?';
+				$sql =  'SELECT * FROM symptpatho WHERE idS = ? AND idP = ?';
 
-				$req = self::prepare($sql);
-				if (self::execute($req, array($id))) {
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($idS, $idP))) {
 					if ($row = $req->fetch()) {
-						$patho = new SymptPatho($row['idP'], $row['mer'], $row['type'], $row['desc']);
+						$symptpatho = new SymptPatho($row['idS'], $row['idP'], $row['aggr']);
 						$req->closeCursor();
-						return $patho;
+						return $symptpatho;
 					} else {
 						$req->closeCursor();
 					}
 				} else {
-					throw new Exception("An error has occured during recover a patho by ID."); 
-				}
-			} catch(Exception $e) {
-				die('An error has occured : '.$e->getMessage());
-			}
-
-		}
-		
-		// Function called to recover a patho by meridien
-		public function getSymptPathoByMer($mer) {
-			try{
-				$sql =  'SELECT * FROM patho WHERE mer = ?';
-
-				$req = self::prepare($sql);
-				if(self::execute($req, array($mer))) {
-					if ($row = $req->fetch()) {
-						$patho = new SymptPatho($row['idP'], $row['mer'], $row['type'], $row['desc']);
-						$req->closeCursor();
-						return $patho;
-					} else {
-						$req->closeCursor();
-					}
-				} else {
-					throw new Exception("An error has occured during recover a patho by meridien."); 
+					throw new Exception("An error has occured during recover a symptpatho by ID."); 
 				}
 			} catch(Exception $e) {
 				die('An error has occured : '.$e->getMessage());
 			}
 		}
 		
-		// Function called to recover a patho by is type
-		public function getSymptPathoByType($type) {
+		// Function called to recover a symptpatho by idS
+		public function getSymptPathoByidS($idS) {
 			try{
-				$sql =  'SELECT * FROM patho WHERE type = ?';
+				$sql =  'SELECT * FROM symptpatho WHERE idS = ?';
 
-				$req = self::prepare($sql);
-				if (self::execute($req, array($type))) {
+				$req = Bdd::prepare($sql);
+				if(Bdd::execute($req, array($idS))) {
 					if ($row = $req->fetch()) {
-						$patho = new SymptPatho($row['idP'], $row['mer'], $row['type'], $row['desc']);
+						$symptpatho = new SymptPatho($row['idS'], $row['idP'], $row['aggr']);
 						$req->closeCursor();
-						return $patho;
+						return $symptpatho;
 					} else {
 						$req->closeCursor();
 					}
 				} else {
-					throw new Exception("An error has occured during recover a patho by type."); 
-				}
-			} catch(Exception $e) {
-				die('An error has occured : '.$e->getMessage());
-			}
-		}
-        
-        // Function called to recover a patho by is desc
-		public function getSymptPathoByDesc($desc) {
-			try{
-				$sql =  'SELECT * FROM patho WHERE desc = ?';
-
-				$req = self::prepare($sql);
-				if (self::execute($req, array($desc))) {
-					if ($row = $req->fetch()) {
-						$patho = new SymptPatho($row['idP'], $row['mer'], $row['type'], $row['desc']);
-						$req->closeCursor();
-						return $patho;
-					} else {
-						$req->closeCursor();
-					}
-				} else {
-					throw new Exception("An error has occured during recover a patho by desc."); 
+					throw new Exception("An error has occured during recover a symptpatho by idS."); 
 				}
 			} catch(Exception $e) {
 				die('An error has occured : '.$e->getMessage());
 			}
 		}
 		
-		// Function called to update a patho meridien
-		public function updateSymptPathoMerById($id, $mer) {
+		// Function called to recover a symptpatho by idP
+		public function getSymptPathoByidP($idP) {
 			try{
-				$sql = 'UPDATE patho SET mer = ? WHERE idP = ?';
+				$sql =  'SELECT * FROM symptpatho WHERE idP = ?';
+
+				$req = Bdd::prepare($sql);
+				if(Bdd::execute($req, array($idP))) {
+					if ($row = $req->fetch()) {
+						$symptpatho = new SymptPatho($row['idS'], $row['idP'], $row['aggr']);
+						$req->closeCursor();
+						return $symptpatho;
+					} else {
+						$req->closeCursor();
+					}
+				} else {
+					throw new Exception("An error has occured during recover a symptpatho by idP."); 
+				}
+			} catch(Exception $e) {
+				die('An error has occured : '.$e->getMessage());
+			}
+		}
+		
+		// Function called to recover a symptpatho by is aggr
+		public function getSymptPathoByAggr($aggr) {
+			try{
+				$sql =  'SELECT * FROM symptpatho WHERE aggr = ?';
+
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($aggr))) {
+					if ($row = $req->fetch()) {
+						$symptpatho = new SymptPatho($row['idS'], $row['idP'], $row['aggr']);
+						$req->closeCursor();
+						return $symptpatho;
+					} else {
+						$req->closeCursor();
+					}
+				} else {
+					throw new Exception("An error has occured during recover a symptpatho by aggr."); 
+				}
+			} catch(Exception $e) {
+				die('An error has occured : '.$e->getMessage());
+			}
+		}
+		
+		// Function called to update a symptpatho aggr
+		public function updateSymptPathoAggrById($idS, $idP, $aggr) {
+			try{
+				$sql = 'UPDATE symptpatho SET aggr = ? WHERE idS = ? AND idP = ?';
 
 				$req = self::prepare($sql);
-				if (self::execute($req, array($mer, $id)) && $req->rowCount()) {
-					$patho = $this->getSymptPathoById($id);
+				if (self::execute($req, array($aggr, $idS, $idP)) && $req->rowCount()) {
+					$symptpatho = $this->getSymptPathoByIdSAndIdP($idS, $idP);
 					$req->closeCursor();
-					return $patho;
+					return $symptpatho;
 				} else {
-					return false;
+					throw new Exception("An error has occured during update a symptpatho aggr."); 
 				}
 			} catch(Exception $e) {
 				die('An error has occured : '.$e->getMessage());
 			}
 		}
 		
-		// Function called to update a patho type
-		public function updateSymptPathoTypeById($id, $type) {
+		// Function called to delete a symptpatho by its id
+		public function deleteSymptPathoById($idS, $idP) {
 			try{
-				$sql = 'UPDATE patho SET type = ? WHERE idP = ?';
+				$sql = 'DELETE FROM symptpatho WHERE idS = ? AND idP = ?';
 
 				$req = self::prepare($sql);
-				if (self::execute($req, array($type, $id)) && $req->rowCount()) {
-					$patho = $this->getSymptPathoById($id);
-					$req->closeCursor();
-					return $patho;
-				} else {
-					return false;
-				}
-			} catch(Exception $e) {
-				die('An error has occured : '.$e->getMessage());
-			}
-		}
-		
-		// Function called to update a patho description by ID
-		public function updateSymptPathoDescById($id, $desc) {
-			try{
-				$sql = 'UPDATE patho SET desc = ? WHERE idP = ?';
-
-				$req = self::prepare($sql);
-				if (self::execute($req, array($desc, $id)) && $req->rowCount() == 1) {
-					$patho = $this->getSymptPathoById($id);
-					$req->closeCursor();
-					return $patho;
-				} else {
-					return false;
-				}
-			} catch(Exception $e) {
-				die('An error has occured : '.$e->getMessage());
-			}
-		}
-		
-		// Function called to delete a patho by its id
-		public function deleteSymptPathoById($id) {
-			try{
-				$sql = 'DELETE FROM patho WHERE idP = ?';
-
-				$req = self::prepare($sql);
-				if (self::execute($req, array($id)) && $req->rowCount() == 1) {
+				if (self::execute($req, array($idS, $idP)) && $req->rowCount() == 1) {
 					$req->closeCursor();
 					return true;
 				} else {
-					return false;
+					throw new Exception("An error has occured during symptpatho delete."); 
 				}
 			} catch(Exception $e) {
 				die('An error has occured : '.$e->getMessage());
 			}
 		}
         
-		// Function called to create a patho 
-		public function createSymptPatho($patho) {
+		// Function called to create a symptpatho 
+		public function createSymptPatho($symptpatho) {
 			try{
-				$sql = 'INSERT INTO patho(mer, type, desc) VALUES (?, ?, ?)';
+				$sql = 'INSERT INTO symptpatho(idS, idP, aggr) VALUES (?, ?, ?)';
 
 				$req = self::prepare($sql);
-				if (self::execute($req, array($patho->$mer, $patho->$type, $patho->$desc)) && $req->rowCount() == 1) {
-					$patho = $this->getUserById($patho->$id);
+				if (self::execute($req, array($symptpatho->$idS, $symptpatho->$idP, $symptpatho->$aggr)) && $req->rowCount() == 1) {
+					$symptpatho = $this->getSymptPathoByIdSAndIdP($symptpatho->$idS, $symptpatho->$idP);
 					$req->closeCursor();
-					return $patho;
+					return $symptpatho;
 				} else {
-					return false;
+					throw new Exception("An error has occured during symptpatho creation."); 
 				}
 			} catch(Exception $e) {
 				die('An error has occured : '.$e->getMessage());
