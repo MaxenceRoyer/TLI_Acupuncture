@@ -9,7 +9,6 @@
 		  <input type="button" id="connect" name="connect" aria-label="ENVOYER" value="ENVOYER" class="button_my_style" />
 	  </form>
 	  <br />
-	  <a href="">Mot de passe oublié</a> <br />
 	  <a href="?inscription">S'enregistrer</a>
 	  {literal}
 	    <script type="text/javascript" src="views/statics/js/md5.js"></script> 

@@ -1,6 +1,7 @@
 <?php
-	include_once("database/Base.php");
-	include_once("models/Symptome.php");
+	include_once(dirname( __FILE__ ) . "/../database/Base.php");
+	include_once(dirname( __FILE__ ) . "/../models/Symptome.php");
+	include_once(dirname( __FILE__ ) . "/../models/Patho.php");
 
 	class SymptomeController extends Bdd {	
 		// Construct
@@ -45,6 +46,30 @@
 					} else {
 						$req->closeCursor();
 					}
+				} else {
+					throw new Exception("An error has occured during recover a symptome by ID."); 
+				}
+			} catch(Exception $e) {
+				die('An error has occured : '.$e->getMessage());
+			}
+		}
+		
+		public function getSymptomesByKeyWord($keyword) {
+			try {
+				$sql =  "SELECT patho.idP, patho.mer, patho.type, patho.desc FROM symptome, keywords, keySympt, symptpatho, patho WHERE symptome.idS = keySympt.idS and keywords.idK = keySympt.idK and symptome.idS = symptpatho.idS and patho.idP = symptpatho.idP and keywords.name LIKE ? ORDER BY patho.idP";
+
+				$req = Bdd::prepare($sql);
+				$keywordLike = "%". $keyword ."%";
+				if (Bdd::execute($req, array($keywordLike))) {
+					$row = $req->fetchAll();
+					
+					$arraySymptomes = array();
+					for ($i = 0; $i < sizeof($row); $i++) {
+						$Patho = new Patho($row[$i]['idP'], $row[$i]['mer'], $row[$i]['type'], $row[$i]['desc']);
+						array_push($arraySymptomes, $Patho);
+					}
+					$req->closeCursor();
+					return $arraySymptomes;
 				} else {
 					throw new Exception("An error has occured during recover a symptome by ID."); 
 				}

@@ -1,6 +1,6 @@
 <?php
-	include_once("database/Base.php");
-	include_once("models/Patho.php");
+	include_once(dirname( __FILE__ ) . "/../database/Base.php");
+	include_once(dirname( __FILE__ ) . "/../models/Patho.php");
 
 	class PathoController extends Bdd {	
 		// Construct
@@ -10,10 +10,17 @@
 		
 		// Function called to recover all pathologies of the DB
 		public function getAllPatho($limit) {
-			$sql =  'SELECT * FROM patho ORDER BY idP ASC LIMIT 0, :limit';
-			
-			$req = Bdd::prepare($sql);
-			$req->bindParam(':limit', $limit, PDO::PARAM_INT);
+			if ($limit != 'NONE') {
+				$sql =  'SELECT * FROM patho ORDER BY idP ASC LIMIT 0, :limit';
+
+				$req = Bdd::prepare($sql);
+				$req->bindParam(':limit', $limit, PDO::PARAM_INT);
+			} else {
+				$sql =  'SELECT * FROM patho ORDER BY idP ASC';
+
+				$req = Bdd::prepare($sql);
+			}
+		
 			$arrayPatho = array();
 			if  (Bdd::execute($req, null)) {
 				$row = $req->fetchAll();
@@ -48,7 +55,6 @@
 			} catch(Exception $e) {
 				die('An error has occured : '.$e->getMessage());
 			}
-
 		}
 		
 		// Function called to recover a patho by meridien
@@ -116,6 +122,7 @@
 				die('An error has occured : '.$e->getMessage());
 			}
 		}
+		
 		
 		// Function called to update a patho meridien
 		public function updatePathoMerById($id, $mer) {

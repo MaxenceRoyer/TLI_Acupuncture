@@ -59,4 +59,12 @@ window.addEventListener("load", function() {
 	var form = document.getElementById("formConnect");
 
 	(form.connect).addEventListener("click", userInitiateConnexion);
+	
+	form.onkeyup = function(e) {
+	   var key = e.keyCode ? e.keyCode : e.which;
+
+	   if (key == 13) {
+		   userInitiateConnexion();
+	   }
+	}
 });
