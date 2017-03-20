@@ -29,6 +29,10 @@
 	if (strpos($_SERVER['REQUEST_URI'], '?inscription')) { // Registering
 		$smarty->display("views/content-pages/inscription.tpl");
 	} else if (strpos($_SERVER['REQUEST_URI'], '?index')) { // Index
+		include_once("scripts_php/content-pages/FluxRss.php");
+		$smarty->assign(array(
+			'arrayRss' => $arrayRss
+		));
 		$smarty->display("views/content-pages/home.tpl");
 	} else if (strpos($_SERVER['REQUEST_URI'], '?pathologies')) { // Pathologies
 		include_once("scripts_php/content-pages/DebugPathoController.php");
@@ -77,7 +81,12 @@
 			'userEmailUpdate' => $userEmailUpdate,
 			'symptpathoDelete' => $symptpathoDelete
 		));
-		$smarty->display("views/content-pages/debug-user-controller.tpl");} else { // Default
+		$smarty->display("views/content-pages/debug-user-controller.tpl");} 
+	else { // Default
+		include_once("scripts_php/content-pages/FluxRss.php");
+		$smarty->assign(array(
+			'arrayRss' => $arrayRss
+		));
 		$smarty->display("views/content-pages/home.tpl");
 	} 
 

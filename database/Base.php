@@ -8,7 +8,7 @@
 			// Security
             $host = "localhost";
             $login = "root";             
-            $password = "";
+            $password = "root";
             $base = "acu";
              
             Bdd::getInstance($host, $login, $password, $base);

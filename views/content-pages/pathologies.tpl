@@ -11,12 +11,6 @@
 				  {/if}
 				  <div id="containerPatho">
 					  <table id="containerPathoTable">
-						  <tr>
-							  <th>Identifiant</th>
-							  <th>Méridien</th>
-							  <th>Type</th>
-							  <th>Description</th>
-						  </tr>
 						  {foreach from=$allPatho item=patho}
 							  <tr>
 								  <td class="idPatho">{$patho->getIdP()}</td>

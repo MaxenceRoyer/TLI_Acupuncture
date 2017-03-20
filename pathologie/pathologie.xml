@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<!DOCTYPE pathologie SYSTEM "pathologie.dtd">
+<pathologie>
+	<idP>1</idP>
+	<meridien mer="P">
+		<code>P</code>
+		<nom>Poumon</nom>
+		<element>m</element>
+		<yin>1</yin>
+	</meridien>
+	<type>me</type>
+	<desc>méridien du poumon externe</desc>
+	<symptomes>
+		<symptome>
+			<idS>24</idS>
+			<desc>Battement des ailes du nez</desc>
+			<keywords>
+				<keyword>
+					<idK>1</idK>
+					<name>\xiiE</name>
+				</keyword>
+				<keyword>
+					<idK>2</idK>
+					<name>\xxxiiE</name>
+				</keyword>
+				<keyword>
+					<idK>3</idK>
+					<name>2ème orteil</name>
+				</keyword>
+				<keyword>
+					<idK>4</idK>
+					<name>3ème orteil</name>
+				</keyword>
+				<keyword>
+					<idK>5</idK>
+					<name>4ème orteil</name>
+				</keyword>
+				<!-- Others results items keyword -->
+			</keywords>
+		</symptome>
+		<symptome>
+			<idS>73</idS>
+			<desc>Dessèchement des phanères</desc>
+			<keywords>
+				<keyword>
+					<idK>1</idK>
+					<name>\xiiE</name>
+				</keyword>
+				<keyword>
+					<idK>2</idK>
+					<name>\xxxiiE</name>
+				</keyword>
+				<keyword>
+					<idK>3</idK>
+					<name>2ème orteil</name>
+				</keyword>
+				<keyword>
+					<idK>4</idK>
+					<name>3ème orteil</name>
+				</keyword>
+				<keyword>
+					<idK>5</idK>
+					<name>4ème orteil</name>
+				</keyword>
+				<!-- Others results items keyword -->
+			</keywords>
+		</symptome>
+		<symptome>
+			<idS>121</idS>
+			<desc>Douleur lancinante au creux sus-claviculaire</desc>
+			<keywords>
+				<keyword>
+					<keyword>
+					<idK>1</idK>
+					<name>\xiiE</name>
+				</keyword>
+				<keyword>
+					<idK>2</idK>
+					<name>\xxxiiE</name>
+				</keyword>
+				<keyword>
+					<idK>3</idK>
+					<name>2ème orteil</name>
+				</keyword>
+				<keyword>
+					<idK>4</idK>
+					<name>3ème orteil</name>
+				</keyword>
+				<keyword>
+					<idK>5</idK>
+					<name>4ème orteil</name>
+				</keyword>
+				<!-- Others results items keyword -->
+				</keyword>
+			</keywords>
+		</symptome>
+		<symptome>
+			<idS>334</idS>
+			<desc>Symptômes thoraco-pulmonaires (toux continuelle, dyspnée, gonflement thoracique)</desc>
+			<keywords>
+				<keyword>
+					<idK>1</idK>
+					<name>\xiiE</name>
+				</keyword>
+				<keyword>
+					<idK>2</idK>
+					<name>\xxxiiE</name>
+				</keyword>
+				<keyword>
+					<idK>3</idK>
+					<name>2ème orteil</name>
+				</keyword>
+				<keyword>
+					<idK>4</idK>
+					<name>3ème orteil</name>
+				</keyword>
+				<keyword>
+					<idK>5</idK>
+					<name>4ème orteil</name>
+				</keyword>
+				<!-- Others results items keyword -->
+			</keywords>
+		</symptome>
+		<symptome>
+			<idS>358</idS>
+			<desc>Transpiration avec pollakiurie et diminution de l'appétit</desc>
+			<keywords>
+				<keyword>
+					<idK>1</idK>
+					<name>\xiiE</name>
+				</keyword>
+				<keyword>
+					<idK>2</idK>
+					<name>\xxxiiE</name>
+				</keyword>
+				<keyword>
+					<idK>3</idK>
+					<name>2ème orteil</name>
+				</keyword>
+				<keyword>
+					<idK>4</idK>
+					<name>3ème orteil</name>
+				</keyword>
+				<keyword>
+					<idK>5</idK>
+					<name>4ème orteil</name>
+				</keyword>
+				<!-- Others results items keyword -->
+			</keywords>
+		</symptome>
+		<symptome>
+			<idS>384</idS>
+			<desc>Vue floue dans les cas graves</desc>
+			<keywords>
+				<keyword>
+					<idK>1</idK>
+					<name>\xiiE</name>
+				</keyword>
+				<keyword>
+					<idK>2</idK>
+					<name>\xxxiiE</name>
+				</keyword>
+				<keyword>
+					<idK>3</idK>
+					<name>2ème orteil</name>
+				</keyword>
+				<keyword>
+					<idK>4</idK>
+					<name>3ème orteil</name>
+				</keyword>
+				<keyword>
+					<idK>5</idK>
+					<name>4ème orteil</name>
+				</keyword>
+				<!-- Others results items keyword -->
+			</keywords>
+		</symptome>
+	</symptomes>
+</pathologie>

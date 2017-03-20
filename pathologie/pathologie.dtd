@@ -1,0 +1,17 @@
+<!ELEMENT pathologie (idP, meridien, type, desc, symptomes)>
+<!ELEMENT idP (#PCDATA)>
+<!ELEMENT meridien (code, nom, element, yin)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT element (#PCDATA)>
+<!ELEMENT yin (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT desc (#PCDATA)>
+<!ELEMENT symptomes (symptome*)>
+<!ELEMENT symptome (idS, desc, keywords)>
+<!ELEMENT idS (#PCDATA)>
+<!ELEMENT desc (#PCDATA)>
+<!ELEMENT keywords (keywords*)>
+<!ELEMENT keyword (idK, name)>
+<!ELEMENT idK (#PCDATA)>
+<!ELEMENT name (#PCDATA)>

@@ -1,0 +1,46 @@
+<?php
+	class RssItem {
+		var $title = "";
+		var $link = "";
+		var $description = "";
+		var $pubDate = "";
+		
+		// Construct
+		function __construct($title, $link, $description, $pubDate) {
+			$this->title = $title;
+		    $this->link = $link;
+			$this->description = $description;
+			$this->pubDate = $pubDate;
+	    }
+		
+		// Getters
+		function getTitle() {
+			return $this->title;
+		}
+		
+		function getLink() {
+			return $this->link;
+		}
+		
+		function getDescription() {
+			return $this->description;
+		}
+		
+		function getPubDate() {
+			return $this->pubDate;
+		}
+		
+		// Setters
+		function setTitle($title) {
+			$this->title = $title;
+		}
+		
+		function setLink($link) {
+			$this->link = $link;
+		}
+		
+		function setPubDate($pubDate) {
+			$this->pubDate = pubDate;
+		}
+	} 
+?>
