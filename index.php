@@ -37,13 +37,13 @@
 			'allPatho' => $allPatho
 		));
 		$smarty->display("views/content-pages/pathologies.tpl");
-	} else if (strpos($_SERVER['REQUEST_URI'], 'pathodetails')) { // Pathologies
-		echo $_GET["id"];
-		/**include_once("scripts_php/content-pages/PathoController.php?id=");
+	} else if (strpos($_SERVER['REQUEST_URI'], 'detailsSymptomes')) { // DetailsSymptomes
+		include_once("scripts_php/content-pages/SymptomesDetails.php");
 		$smarty->assign(array(
-			'PathoDetails' => $PathoDetails
+			'PathoDetails' => getDetailsPatho(substr($_SERVER['REQUEST_URI'], -1)),
+			'PathoSymptomes' => getDetailsSymptomes(substr($_SERVER['REQUEST_URI'], -1))
 		));
-		$smarty->display("views/content-pages/pathodetails.tpl");*/
+		$smarty->display("views/content-pages/detailsSymptomes.tpl");
 	} else if (strpos($_SERVER['REQUEST_URI'], 'informations')) { // Informations
 		$smarty->display("views/content-pages/informations.tpl"); 
 	} else if (strpos($_SERVER['REQUEST_URI'], 'debug-user-controller')) { // Debug-user-controller

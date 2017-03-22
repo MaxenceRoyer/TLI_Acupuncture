@@ -77,5 +77,28 @@
 				die('An error has occured : '.$e->getMessage());
 			}
 		}
+		
+		public function getSymptomesByIdPatho($idP) {
+			try {
+				$sql =  "SELECT symptome.idS, symptome.desc FROM symptome, patho, symptpatho WHERE symptome.idS = symptPatho.idS and patho.idP = symptPatho.idP and patho.idP LIKE ? ORDER BY symptome.idS";
+
+				$req = Bdd::prepare($sql);
+				if (Bdd::execute($req, array($idP))) {
+					$row = $req->fetchAll();
+					
+					$arraySymptomes = array();
+					for ($i = 0; $i < sizeof($row); $i++) {
+						$Symptome = new Symptome($row[$i]['idS'], $row[$i]['desc'], null);
+						array_push($arraySymptomes, $Symptome);
+					}
+					$req->closeCursor();
+					return $arraySymptomes;
+				} else {
+					throw new Exception("An error has occured during recover symptomes of a pathoId."); 
+				}
+			} catch(Exception $e) {
+				die('An error has occured : '.$e->getMessage());
+			}
+		}
 	}
 ?>

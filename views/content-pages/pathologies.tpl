@@ -18,6 +18,7 @@
 							  <th>Méridien</th>
 					  		  <th>Type</th>
 							  <th>Description</th>
+							  <th class="text_align_center">#</th>
 						  </tr>
 						  {foreach from=$allPatho item=patho}
 							  <tr>
@@ -25,6 +26,11 @@
 								  <td class="merPatho">{$patho->getMer()}</td>
 								  <td class="typePatho">{$patho->getType()}</td>
 								  <td class="descPatho">{$patho->getDesc()}</td>
+								  <td class="imgPatho">
+									  <a href="detailsSymptomes_{$patho->getIdP()}">
+										  <img src="views/statics/img/view.png" title="Voir les symptomes" class="img_symptomes">
+									  </a>								  
+								  </td>
 							  </tr>
 						  {/foreach}
 					  </table>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-21 10:41:11
+/* Smarty version 3.1.30, created on 2017-03-22 13:32:21
   from "C:\wamp64\www\tli-acupuncture\views\content-pages\informations.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58d10347253e91_82629755',
+  'unifunc' => 'content_58d27ce505adc6_78123974',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9ae551a2a2b0372476f7a3314bc7dde565832d00' => 
     array (
       0 => 'C:\\wamp64\\www\\tli-acupuncture\\views\\content-pages\\informations.tpl',
-      1 => 1490092869,
+      1 => 1490189539,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58d10347253e91_82629755 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58d27ce505adc6_78123974 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 		  <!-- Content -->
           <div id="content_page" role="main">
@@ -58,6 +58,12 @@ principales pathologies en acupuncture</li>
 				  </p>
 				  <p>
 					  Flux RSS utilisé pour la page d'index : <a href="http://www.allodocteurs.fr/rss.xml" target="_blank">AlloDocteurs.fr</a>
+				  </p>
+			  </section>
+			  <section class="stripped">
+				  <h4>Images utilisées</h4>
+				  <p> 
+					  Les images utilisées sur le site proviennent toutes de la banque d'images gratuites et libres de droits <a href="https://pixabay.com/fr/" title="Banque d'images gratuites et libres de droits" target="_blank">Pixabay</a>.
 				  </p>
 			  </section>
           </div><?php }

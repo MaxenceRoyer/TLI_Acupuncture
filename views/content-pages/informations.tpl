@@ -36,4 +36,10 @@ principales pathologies en acupuncture</li>
 					  Flux RSS utilisé pour la page d'index : <a href="http://www.allodocteurs.fr/rss.xml" target="_blank">AlloDocteurs.fr</a>
 				  </p>
 			  </section>
+			  <section class="stripped">
+				  <h4>Images utilisées</h4>
+				  <p> 
+					  Les images utilisées sur le site proviennent toutes de la banque d'images gratuites et libres de droits <a href="https://pixabay.com/fr/" title="Banque d'images gratuites et libres de droits" target="_blank">Pixabay</a>.
+				  </p>
+			  </section>
           </div>

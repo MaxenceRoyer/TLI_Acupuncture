@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-21 10:17:59
+/* Smarty version 3.1.30, created on 2017-03-22 13:27:23
   from "C:\wamp64\www\tli-acupuncture\views\content-pages\pathologies.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58d0fdd732f473_00797186',
+  'unifunc' => 'content_58d27bbb68b440_96478170',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '329a949d04feeb95313fa68fd091b5ac341e407b' => 
     array (
       0 => 'C:\\wamp64\\www\\tli-acupuncture\\views\\content-pages\\pathologies.tpl',
-      1 => 1490091478,
+      1 => 1490189240,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58d0fdd732f473_00797186 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58d27bbb68b440_96478170 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 		  <!-- Content -->
           <div id="content_page" role="main">
@@ -44,6 +44,7 @@ function content_58d0fdd732f473_00797186 (Smarty_Internal_Template $_smarty_tpl)
 							  <th>Méridien</th>
 					  		  <th>Type</th>
 							  <th>Description</th>
+							  <th class="text_align_center">#</th>
 						  </tr>
 						  <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['allPatho']->value, 'patho');
@@ -59,6 +60,12 @@ foreach ($_from as $_smarty_tpl->tpl_vars['patho']->value) {
 </td>
 								  <td class="descPatho"><?php echo $_smarty_tpl->tpl_vars['patho']->value->getDesc();?>
 </td>
+								  <td class="imgPatho">
+									  <a href="detailsSymptomes_<?php echo $_smarty_tpl->tpl_vars['patho']->value->getIdP();?>
+">
+										  <img src="views/statics/img/view.png" title="Voir les symptomes" class="img_symptomes">
+									  </a>								  
+								  </td>
 							  </tr>
 						  <?php
 }
