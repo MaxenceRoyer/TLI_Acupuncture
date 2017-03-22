@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-07 07:08:22
+/* Smarty version 3.1.30, created on 2017-03-22 09:21:59
   from "C:\wamp64\www\tli-acupuncture\views\components\menu.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58be5c66549522_22000253',
+  'unifunc' => 'content_58d242375e3f16_03755784',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '81138292a57ce03a9feb695fc0921cef0cbd90f2' => 
     array (
       0 => 'C:\\wamp64\\www\\tli-acupuncture\\views\\components\\menu.tpl',
-      1 => 1488870500,
+      1 => 1490174517,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58be5c66549522_22000253 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58d242375e3f16_03755784 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!-- Authentication -->
 <div id="authentication">
@@ -33,7 +33,7 @@ function content_58be5c66549522_22000253 (Smarty_Internal_Template $_smarty_tpl)
 		  <input type="button" id="connect" name="connect" aria-label="ENVOYER" value="ENVOYER" class="button_my_style" />
 	  </form>
 	  <br />
-	  <a href="?inscription">S'enregistrer</a>
+	  <a href="inscription">S'enregistrer</a>
 	  
 	    <?php echo '<script'; ?>
  type="text/javascript" src="views/statics/js/md5.js"><?php echo '</script'; ?>

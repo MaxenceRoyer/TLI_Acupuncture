@@ -9,7 +9,7 @@
 		  <input type="button" id="connect" name="connect" aria-label="ENVOYER" value="ENVOYER" class="button_my_style" />
 	  </form>
 	  <br />
-	  <a href="?inscription">S'enregistrer</a>
+	  <a href="inscription">S'enregistrer</a>
 	  {literal}
 	    <script type="text/javascript" src="views/statics/js/md5.js"></script> 
 		<script type="text/javascript" src="views/statics/js/connection.js"></script>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-20 13:39:10
+/* Smarty version 3.1.30, created on 2017-03-21 10:17:59
   from "C:\wamp64\www\tli-acupuncture\views\content-pages\pathologies.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58cfdb7ee1ee37_56794359',
+  'unifunc' => 'content_58d0fdd732f473_00797186',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '329a949d04feeb95313fa68fd091b5ac341e407b' => 
     array (
       0 => 'C:\\wamp64\\www\\tli-acupuncture\\views\\content-pages\\pathologies.tpl',
-      1 => 1490015859,
+      1 => 1490091478,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58cfdb7ee1ee37_56794359 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58d0fdd732f473_00797186 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 		  <!-- Content -->
           <div id="content_page" role="main">
@@ -34,9 +34,17 @@ function content_58cfdb7ee1ee37_56794359 (Smarty_Internal_Template $_smarty_tpl)
  type="text/javascript" src="views/statics/js/search-patho.js"><?php echo '</script'; ?>
 >
 				    
+				  <?php } else { ?>
+				  	<b class="span_error">Connectez-vous pour avoir accès à des fonctionnalités supplémentaires.</b>
 				  <?php }?>
 				  <div id="containerPatho">
 					  <table id="containerPathoTable">
+						  <tr>
+							  <th>Identifiant</th>
+							  <th>Méridien</th>
+					  		  <th>Type</th>
+							  <th>Description</th>
+						  </tr>
 						  <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['allPatho']->value, 'patho');
 if ($_from !== null) {

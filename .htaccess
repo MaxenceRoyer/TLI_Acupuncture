@@ -1,5 +1,13 @@
-Options +FollowSymLinks
-RewriteEngine On
-
-# Resolve .php file for extensionless php urls
-# RewriteRule ^([^/.]+)$ $1.php [L]
+RewriteEngine on
+RewriteRule ^([^/.]+)$ $1.php [L]
+RewriteRule ^index index.php?index=$0 [L]
+RewriteRule ^pathologies index.php?pathologies=$0 [L]
+RewriteRule ^inscription index.php?inscription=$0 [L]
+RewriteRule ^informations index.php?informations=$0 [L]
+RewriteRule ^pathodetails index.php?pathodetails=$0 [L]
+RewriteRule ^debug-user-controller index.php?debug-user-controller=$0 [L]
+RewriteRule debug-symptome-controller index.php?debug-symptome-controller=$0 [L]
+RewriteRule ^debug-patho-controller index.php?debug-patho-controller=$0 [L]
+RewriteRule ^debug-symptpatho-controller index.php?debug-symptpatho-controller=$0 [L]
+RewriteRule ^informations index.php?informations=$0 [L]
+ErrorDocument 404 http://localhost/tli-acupuncture/404.php

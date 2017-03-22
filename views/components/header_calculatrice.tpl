@@ -13,4 +13,4 @@
     <body>
         <div id="content">
           <!-- Ban -->
-          <header role="banner"></header>
+          <header role="banner" class="banner_calculatrice"></header>

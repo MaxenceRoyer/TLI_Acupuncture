@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-21 10:22:48
+/* Smarty version 3.1.30, created on 2017-03-21 08:35:37
   from "C:\wamp64\www\tli-acupuncture\views\components\header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58d0fef8a21982_18879182',
+  'unifunc' => 'content_58d0e5d9397a96_17131333',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'a3247a06b80881033cb9cfe0e52ac526367a1a5f' => 
+    '6c699219941b8cdc7a60f9e76ae7c234de502d85' => 
     array (
       0 => 'C:\\wamp64\\www\\tli-acupuncture\\views\\components\\header.tpl',
-      1 => 1490091767,
+      1 => 1490085335,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58d0fef8a21982_18879182 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58d0e5d9397a96_17131333 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>Association des acupuncteurs</title>
-		<link rel="shortcut icon" type="image/ico" href="http://localhost/tli-acupuncture/views/statics/img/favicon.png" />
         <!-- Encodage des caractères -->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <!-- Lien vers le fichier css -->

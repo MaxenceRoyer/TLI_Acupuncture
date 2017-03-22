@@ -1,0 +1,5 @@
+RewriteRule ^calculatrice/addition/([0-9]+)/([0-9]+) traitement.php?type=addition&&number_1=$1&&number_2=$2 [L]
+RewriteRule ^calculatrice/soustraction/([0-9]+)/([0-9]+) traitement.php?type=soustraction&&number_1=$1&&number_2=$2 [L]
+RewriteRule ^calculatrice/multiplication/([0-9]+)/([0-9]+) traitement.php?type=multiplication&&number_1=$1&&number_2=$2 [L]
+RewriteRule ^calculatrice/division/([0-9]+)/([0-9]+) traitement.php?type=division&&number_1=$1&&number_2=$2 [L]
+RewriteRule ^calculatrice index.php

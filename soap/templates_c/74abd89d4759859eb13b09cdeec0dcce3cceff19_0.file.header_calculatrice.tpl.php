@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-21 10:22:48
-  from "C:\wamp64\www\tli-acupuncture\views\components\header.tpl" */
+/* Smarty version 3.1.30, created on 2017-03-21 10:23:15
+  from "C:\wamp64\www\tli-acupuncture\views\components\header_calculatrice.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58d0fef8a21982_18879182',
+  'unifunc' => 'content_58d0ff1319a8b3_64645458',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'a3247a06b80881033cb9cfe0e52ac526367a1a5f' => 
+    '74abd89d4759859eb13b09cdeec0dcce3cceff19' => 
     array (
-      0 => 'C:\\wamp64\\www\\tli-acupuncture\\views\\components\\header.tpl',
-      1 => 1490091767,
+      0 => 'C:\\wamp64\\www\\tli-acupuncture\\views\\components\\header_calculatrice.tpl',
+      1 => 1490091793,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58d0fef8a21982_18879182 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58d0ff1319a8b3_64645458 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,5 +37,5 @@ function content_58d0fef8a21982_18879182 (Smarty_Internal_Template $_smarty_tpl)
     <body>
         <div id="content">
           <!-- Ban -->
-          <header role="banner"></header><?php }
+          <header role="banner" class="banner_calculatrice"></header><?php }
 }

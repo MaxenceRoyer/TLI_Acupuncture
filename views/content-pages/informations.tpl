@@ -18,12 +18,22 @@ principales pathologies en acupuncture</li>
 				  </p>
 			  </section>
 			  <section class="stripped">
-				  <h4>Bibliographie</h4>
+				  <h4>Participants</h4>
+				  <p>
+					  Ce site a été développé par 4 étudiants en 4IRC : Maxence Royer, Camille Cordier, Delorme Claire et Sébastien Urbe. Il s'agit d'un groupe mixte constitué de 2 étudiants de majeure informatique et de 2 de majeure réseaux et télécoms.
+				  </p>
 			  </section>
 			  <section class="stripped">
 				  <h4>Webographie</h4>
 				  <p>
-				  	Implémentation JS de l'algorithme de cryptage MD5 : <a href="http://membres-liglab.imag.fr/PPerso/membres/donsez/cours/exemplescourstechnoweb/js_securehash/" target="_blank">Javascript MD5</a>
+					  Implémentation JS de l'algorithme de cryptage MD5 : <a href="http://membres-liglab.imag.fr/PPerso/membres/donsez/cours/exemplescourstechnoweb/js_securehash/" target="_blank">Javascript MD5</a>
+				  </p>
+				  <p>
+					  WS avec PHP5 - SOAP : <a href="http://vivien-brissat.developpez.com/tutoriels/php/soap/" target="_blank">
+					  Tutoriel developpez.com - SOAP</a>
+				  </p>
+				  <p>
+					  Flux RSS utilisé pour la page d'index : <a href="http://www.allodocteurs.fr/rss.xml" target="_blank">AlloDocteurs.fr</a>
 				  </p>
 			  </section>
           </div>
