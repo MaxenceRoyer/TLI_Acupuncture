@@ -6,7 +6,7 @@ git clone https://github.com/MaxenceRoyer/TLI_Acupuncture.git
 [abv][nameBranch] Message (en anglais) - abv : MRR pour Maxence Royer et CCR pour Camille Cordier
 # Architecture
 Le projet est composé de plusieurs parties. A la racine du projet se trouve le site réalisé pour l’Association des Acupuncteurs soucieux de l’Accessibilité (AAA).  
-Une deuxième partie du projet concerne la partie WS du projet fil rouge à savoir une calculatrice et un WS relative à une pat
+Une deuxième partie du projet concerne la partie WS du projet fil rouge à savoir une calculatrice et un WS relative à une pathologie.
 # Répartition 
 Maxence : --%  
 Camille : --%  
