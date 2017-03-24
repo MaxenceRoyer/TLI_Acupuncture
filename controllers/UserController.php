@@ -1,6 +1,6 @@
 <?php
-	include_once(dirname( __FILE__ ) . "/../database/Base.php");
-	include_once(dirname( __FILE__ ) . "/../models/User.php");
+	include_once(dirname( __FILE__ ) . "/../database/Bdd.class.php");
+	include_once(dirname( __FILE__ ) . "/../models/User.class.php");
 
 	class UserController extends Bdd {	
 		// Construct

@@ -1,7 +1,7 @@
 <?php
-	include_once(dirname( __FILE__ ) . "/../database/Base.php");
-	include_once(dirname( __FILE__ ) . "/../models/Symptome.php");
-	include_once(dirname( __FILE__ ) . "/../models/Patho.php");
+	include_once(dirname( __FILE__ ) . "/../database/Bdd.class.php");
+	include_once(dirname( __FILE__ ) . "/../models/Symptome.class.php");
+	include_once(dirname( __FILE__ ) . "/../models/Patho.class.php");
 
 	class SymptomeController extends Bdd {	
 		// Construct

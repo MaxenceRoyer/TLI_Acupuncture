@@ -1,8 +1,8 @@
 <?php 
 	if (isset($_GET["type"]) && !empty($_GET["type"])) {
 		if (isset($_GET["number_1"]) && isset($_GET["number_2"])) {
-			require_once("lib/nusoap.php");
-			require_once("models/Calculatrice.php");
+			require_once(dirname( __FILE__ ) . "/lib/nusoap.php");
+			require_once(dirname( __FILE__ ) . "/models/Calculatrice.php");
 
 			define("ADDITION_STR", "addition");
 			define("SOUSTRACTION_STR", "soustraction");
@@ -13,7 +13,7 @@
 
 			$server = new soap_server();
 
-			$namespace = "http://localhost/tli-acupuncture/soap/traitement.php";
+			$namespace = dirname( __FILE__ ) . "/traitement.php";
 			$server->wsdl->schemaTargetNamespace = $namespace;
 
 			$calculatrice = new Calculatrice();

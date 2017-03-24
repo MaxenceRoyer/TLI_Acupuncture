@@ -1,6 +1,6 @@
 <?php
-	include_once("database/Base.php");
-	include_once("models/SymptPatho.php");
+	include_once(dirname( __FILE__ ) . "/../database/Bdd.class.php");
+	include_once(dirname( __FILE__ ) . "/../models/SymptPatho.class.php");
 
 	class SymptPathoController extends Bdd {	
 		// Construct

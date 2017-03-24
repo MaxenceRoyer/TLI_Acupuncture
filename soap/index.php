@@ -1,14 +1,14 @@
 <?php 
 	// Include smarty
-	include_once("../libs-smarty/smarty.class.php");
+	include_once(dirname( __FILE__ ) . "/../libs-smarty/smarty.class.php");
 
     $smarty = new Smarty();
 
-	$smarty->display("../views/components/header_calculatrice.tpl");
+	$smarty->display(dirname( __FILE__ ) . "/../views/components/header_calculatrice.tpl");
 
-	$smarty->display("../views/components/nav_ws.tpl");
+	$smarty->display(dirname( __FILE__ ) . "/../views/components/nav_ws.tpl");
 
-	$smarty->display("../views/content-pages/ws.tpl");
+	$smarty->display(dirname( __FILE__ ) . "/../views/content-pages/ws.tpl");
 	
-	$smarty->display("../views/components/footer.tpl");
+	$smarty->display(dirname( __FILE__ ) . "/../views/components/footer.tpl");
 ?>
