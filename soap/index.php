@@ -1,6 +1,6 @@
 <?php 
 	// Include smarty
-	include_once(dirname( __FILE__ ) . "/../libs-smarty/smarty.class.php");
+	include_once(dirname( __FILE__ ) . "/../libs-smarty/Smarty.class.php");
 
     $smarty = new Smarty();
 
