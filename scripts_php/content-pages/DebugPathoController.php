@@ -1,5 +1,5 @@
 <?php
-	include_once("controllers/PathoController.php");
+	include_once(dirname( __FILE__ ) . "/../../controllers/PathoController.php");
 
 	$PathoController = new PathoController();
 

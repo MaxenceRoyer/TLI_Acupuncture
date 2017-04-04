@@ -1,7 +1,7 @@
 		  <!-- Content -->
           <div id="content_page" role="main">
 			  <section class="stripped">
-				  <h3>Liste des pathologies</h3>
+				  <h1>Liste des pathologies</h1>
 				  {if !empty($userSession)}
 				  	<span class="span_error" id="spanSearchPathoError"></span>
 				  	<input type="search" placeholder="Entrez un mot-clef" id="searchPatho" name="searchPatho">

@@ -1,5 +1,5 @@
 <?php
-	include_once(dirname( __FILE__ ) . "/../../models/RssItem.php");
+	include_once(dirname( __FILE__ ) . "/../../models/RssItem.class.php");
 
 	$urlRss = "http://www.allodocteurs.fr/rss.xml"; 
 	$rssLoaded = simplexml_load_file($urlRss);

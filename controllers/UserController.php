@@ -1,9 +1,6 @@
 <?php
-/**
- * I belong to a file
- */
-include_once(dirname( __FILE__ ) . "/../database/Base.php");
-include_once(dirname( __FILE__ ) . "/../models/User.php");
+include_once(dirname( __FILE__ ) . "/../database/Bdd.class.php");
+include_once(dirname( __FILE__ ) . "/../models/User.class.php");
 
 /**
  * I belong to a class

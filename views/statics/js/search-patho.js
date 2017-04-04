@@ -31,6 +31,7 @@ function tableAddRowsContent(table, arrayPathos) {
 			var cell2 = row.insertCell(1);
 			var cell3 = row.insertCell(2);
 			var cell4 = row.insertCell(3);
+			var cell5 = row.insertCell(4)
 
 			cell1.innerHTML = arrayPathos[i]['idP'];
 			cell1.classList.add("idPatho");
@@ -40,6 +41,15 @@ function tableAddRowsContent(table, arrayPathos) {
 			cell3.classList.add("typePatho");
 			cell4.innerHTML = arrayPathos[i]['desc'];
 			cell4.classList.add("descPatho");
+			var a = document.createElement("a");
+			a.href = "detailsSymptomes_" + arrayPathos[i]['idP'];
+			var img = document.createElement("img");
+			img.src = "views/statics/img/view.png";
+			img.title = "Voir les symptomes";
+			img.classList.add("img_symptomes");
+			a.appendChild(img);
+			cell5.appendChild(a);
+			cell5.classList.add("imgPatho");
 		}
 	} else {
 		changeIHMErrorMessage("Aucun résultat pour ce mot-clé !");
@@ -53,11 +63,15 @@ function addHeaderTable(table) {
 	var cell2 = row.insertCell(1);
 	var cell3 = row.insertCell(2);
 	var cell4 = row.insertCell(3);
+	var cell5 = row.insertCell(4);
+	cell5.classList.add("text_align_center");
 	
 	cell1.innerHTML = "<b>Identifiant</b>";
 	cell2.innerHTML = "<b>Méridien</b>";
 	cell3.innerHTML = "<b>Type</b>";
 	cell4.innerHTML = "<b>Description</b>";
+	
+	cell5.innerHTML = "<b>#</b>";
 }
 
 function getXMLHttpRequest_GET(url_page, keyword) {
