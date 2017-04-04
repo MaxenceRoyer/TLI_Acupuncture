@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-22 13:27:23
+/* Smarty version 3.1.30, created on 2017-03-24 14:35:36
   from "C:\wamp64\www\tli-acupuncture\views\content-pages\pathologies.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58d27bbb68b440_96478170',
+  'unifunc' => 'content_58d52eb87040b3_41087830',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '329a949d04feeb95313fa68fd091b5ac341e407b' => 
     array (
       0 => 'C:\\wamp64\\www\\tli-acupuncture\\views\\content-pages\\pathologies.tpl',
-      1 => 1490189240,
+      1 => 1490364965,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58d27bbb68b440_96478170 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58d52eb87040b3_41087830 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 		  <!-- Content -->
           <div id="content_page" role="main">
@@ -28,7 +28,7 @@ function content_58d27bbb68b440_96478170 (Smarty_Internal_Template $_smarty_tpl)
 				  <h3>Liste des pathologies</h3>
 				  <?php if (!empty($_smarty_tpl->tpl_vars['userSession']->value)) {?>
 				  	<span class="span_error" id="spanSearchPathoError"></span>
-				  	<input type="search" placeholder="Entrez un mot-clef" id="searchPatho" name="searchPatho">
+				  	<input type="search" placeholder="Entrez un mot-clef" id="searchPatho" name="searchPatho" tabindex="21">
 				  	
 						<?php echo '<script'; ?>
  type="text/javascript" src="views/statics/js/search-patho.js"><?php echo '</script'; ?>

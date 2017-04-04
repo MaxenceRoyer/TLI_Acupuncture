@@ -4,7 +4,7 @@
 				  <h3>Liste des pathologies</h3>
 				  {if !empty($userSession)}
 				  	<span class="span_error" id="spanSearchPathoError"></span>
-				  	<input type="search" placeholder="Entrez un mot-clef" id="searchPatho" name="searchPatho">
+				  	<input type="search" placeholder="Entrez un mot-clef" id="searchPatho" name="searchPatho" tabindex="21">
 				  	{literal}
 						<script type="text/javascript" src="views/statics/js/search-patho.js"></script>
 				    {/literal}

@@ -7,7 +7,7 @@
 					  <b>URL</b> : http://localhost/tli-acupuncture/soap/calculatrice/addition/<b>[NUMBER_1]</b>/<b>[NUMBER_2]</b>
 				  </p>
 				  <p>
-					  <b>Exemple</b> : <a href="http://localhost/tli-acupuncture/soap/calculatrice/addition/10/3" title="Exemple d'addition" target="_blank">http://localhost/tli-acupuncture/soap/calculatrice/addition/10/3</a>
+					  <b>Exemple</b> : <a href="http://localhost/tli-acupuncture/soap/calculatrice/addition/10/3" title="Exemple d'addition" target="_blank" tabindex="32">http://localhost/tli-acupuncture/soap/calculatrice/addition/10/3</a>
 				  </p>
 			  </section>
 			  <section class="stripped">
@@ -16,7 +16,7 @@
 					  <b>URL</b> : http://localhost/tli-acupuncture/soap/calculatrice/soustraction/<b>[NUMBER_1]</b>/<b>[NUMBER_2]</b>
 				  </p>
 				  <p>
-					  <b>Exemple</b> : <a href="http://localhost/tli-acupuncture/soap/calculatrice/soustraction/10/3" title="Exemple de soustraction" target="_blank">http://localhost/tli-acupuncture/soap/calculatrice/soustraction/10/3</a>
+					  <b>Exemple</b> : <a href="http://localhost/tli-acupuncture/soap/calculatrice/soustraction/10/3" title="Exemple de soustraction" target="_blank" tabindex="33">http://localhost/tli-acupuncture/soap/calculatrice/soustraction/10/3</a>
 				  </p>
 			  </section>
 			  <section class="stripped">
@@ -25,7 +25,7 @@
 					  <b>URL</b> : http://localhost/tli-acupuncture/soap/calculatrice/multiplication/<b>[NUMBER_1]</b>/<b>[NUMBER_2]</b>
 				  </p>
 				  <p>
-					  <b>Exemple</b> : <a href="http://localhost/tli-acupuncture/soap/calculatrice/multiplication/10/3" title="Exemple de multiplication" target="_blank">http://localhost/tli-acupuncture/soap/calculatrice/multiplication/10/3</a>
+					  <b>Exemple</b> : <a href="http://localhost/tli-acupuncture/soap/calculatrice/multiplication/10/3" title="Exemple de multiplication" target="_blank" tabindex="34">http://localhost/tli-acupuncture/soap/calculatrice/multiplication/10/3</a>
 				  </p>
 			  </section>
 			  <section class="stripped">
@@ -34,7 +34,7 @@
 					  <b>URL</b> : http://localhost/tli-acupuncture/soap/calculatrice/division/<b>[NUMBER_1]</b>/<b>[NUMBER_2]</b>
 				  </p>
 				  <p>
-					  <b>Exemple</b> : <a href="http://localhost/tli-acupuncture/soap/calculatrice/division/10/3" title="Exemple de division" target="_blank">http://localhost/tli-acupuncture/soap/calculatrice/division/10/3</a>
+					  <b>Exemple</b> : <a href="http://localhost/tli-acupuncture/soap/calculatrice/division/10/3" title="Exemple de division" target="_blank" tabindex="35">http://localhost/tli-acupuncture/soap/calculatrice/division/10/3</a>
 				  </p>
 			  </section>
           </div>
