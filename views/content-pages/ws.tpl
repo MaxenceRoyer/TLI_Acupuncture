@@ -4,10 +4,10 @@
 			  <section class="stripped">
 				  <h3>Addition</h3>
 				  <p>
-					  <b>URL</b> : http://localhost/tli-acupuncture/soap/calculatrice/addition/<b>[NUMBER_1]</b>/<b>[NUMBER_2]</b>
+					  <b>URL</b> : .../tli-acupuncture/soap/calculatrice/addition/<b>[NUMBER_1]</b>/<b>[NUMBER_2]</b>
 				  </p>
 				  <p>
-					  <b>Exemple</b> : <a href="http://localhost/tli-acupuncture/soap/calculatrice/addition/10/3" title="Exemple d'addition" target="_blank">http://localhost/tli-acupuncture/soap/calculatrice/addition/10/3</a>
+					  <b>Exemple</b> : <a href="calculatrice/addition/10/3" title="Exemple d'addition" target="_blank">calculatrice/addition/10/3</a>
 				  </p>
 			  </section>
 			  <section class="stripped">
