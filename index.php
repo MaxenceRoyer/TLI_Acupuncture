@@ -1,15 +1,14 @@
 <?php 
-	include_once("models/User.php");
-
+	include_once(dirname( __FILE__ ) . "/models/User.class.php");
 	session_start();
 
 	// Include smarty
-	include_once("libs-smarty/smarty.class.php");
+	include_once(dirname( __FILE__ ) . "/libs-smarty/smarty.class.php");
 
     $smarty = new Smarty();
 
-	$smarty->display("views/components/header.tpl");
-	$smarty->display("views/components/nav.tpl");
+	$smarty->display(dirname( __FILE__ ) . "/views/components/header.tpl");
+	$smarty->display(dirname( __FILE__ ) . "/views/components/nav.tpl");
 
 	if (!strpos($_SERVER['REQUEST_URI'], 'debug-user-controller') && !strpos($_SERVER['REQUEST_URI'], 'debug-symptome-controller') && !strpos($_SERVER['REQUEST_URI'], 'debug-patho-controller')) {
 		if (isset($_SESSION["User"]) && isset($_SESSION["SessionIsOpen"])) {
@@ -19,35 +18,35 @@
 				));
 			}
 		}
-		$smarty->display("views/components/menu.tpl");
+		$smarty->display(dirname( __FILE__ ) . "/views/components/menu.tpl");
 	}
 
 	// To include the content page thanks to the URL called
 	if (strpos($_SERVER['REQUEST_URI'], 'inscription')) { // Registering
-		$smarty->display("views/content-pages/inscription.tpl");
+		$smarty->display(dirname( __FILE__ ) . "/views/content-pages/inscription.tpl");
 	} else if (strpos($_SERVER['REQUEST_URI'], 'index')) { // Index
-		include_once("scripts_php/content-pages/FluxRss.php");
+		include_once(dirname( __FILE__ ) . "/scripts_php/content-pages/FluxRss.php");
 		$smarty->assign(array(
 			'arrayRss' => $arrayRss
 		));
-		$smarty->display("views/content-pages/home.tpl");
+		$smarty->display(dirname( __FILE__ ) . "/views/content-pages/home.tpl");
 	} else if (strpos($_SERVER['REQUEST_URI'], 'pathologies')) { // Pathologies
-		include_once("scripts_php/content-pages/DebugPathoController.php");
+		include_once(dirname( __FILE__ ) . "/scripts_php/content-pages/DebugPathoController.php");
 		$smarty->assign(array(
 			'allPatho' => $allPatho
 		));
-		$smarty->display("views/content-pages/pathologies.tpl");
+		$smarty->display(dirname( __FILE__ ) . "/views/content-pages/pathologies.tpl");
 	} else if (strpos($_SERVER['REQUEST_URI'], 'detailsSymptomes')) { // DetailsSymptomes
-		include_once("scripts_php/content-pages/SymptomesDetails.php");
+		include_once(dirname( __FILE__ ) . "/scripts_php/content-pages/SymptomesDetails.php");
 		$smarty->assign(array(
 			'PathoDetails' => getDetailsPatho(substr($_SERVER['REQUEST_URI'], -1)),
 			'PathoSymptomes' => getDetailsSymptomes(substr($_SERVER['REQUEST_URI'], -1))
 		));
-		$smarty->display("views/content-pages/detailsSymptomes.tpl");
+		$smarty->display(dirname( __FILE__ ) . "/views/content-pages/detailsSymptomes.tpl");
 	} else if (strpos($_SERVER['REQUEST_URI'], 'informations')) { // Informations
-		$smarty->display("views/content-pages/informations.tpl"); 
+		$smarty->display(dirname( __FILE__ ) . "/views/content-pages/informations.tpl"); 
 	} else if (strpos($_SERVER['REQUEST_URI'], 'debug-user-controller')) { // Debug-user-controller
-		include_once("scripts_php/content-pages/DebugUserController.php");
+		include_once(dirname( __FILE__ ) . "/scripts_php/content-pages/DebugUserController.php");
 		$smarty->assign(array(
 			'allUsers' => $allUsers,
 			'userId' => $userId,
@@ -59,23 +58,23 @@
 			'userEmailUpdate' => $userEmailUpdate,
 			'userDelete' => $userDelete
 		));
-		$smarty->display("views/content-pages/debug-user-controller.tpl");
+		$smarty->display(dirname( __FILE__ ) . "/views/content-pages/debug-user-controller.tpl");
 	} else if (strpos($_SERVER['REQUEST_URI'], 'debug-symptome-controller')) { // Debug-symptome-controller
-		include_once("scripts_php/content-pages/DebugSymptomeController.php");
+		include_once(dirname( __FILE__ ) . "/scripts_php/content-pages/DebugSymptomeController.php");
 		$smarty->assign(array(
 			'allSymptomesLimit3' => $allSymptomesLimit3,
 			'symptome1' => $symptome1,
 			'symptomeNotExist' => $symptomeNotExist
 		));
-		$smarty->display("views/content-pages/debug-symptome-controller.tpl");
+		$smarty->display(dirname( __FILE__ ) . "/views/content-pages/debug-symptome-controller.tpl");
 	} else if (strpos($_SERVER['REQUEST_URI'], 'debug-patho-controller')) { // Debug-patho-controller
-		include_once("scripts_php/content-pages/DebugPathoController.php");
+		include_once(dirname( __FILE__ ) . "/scripts_php/content-pages/DebugPathoController.php");
 		$smarty->assign(array(
 			'allPatho' => $allPatho
 		));
-		$smarty->display("views/content-pages/debug-patho-controller.tpl");
+		$smarty->display(dirname( __FILE__ ) . "/views/content-pages/debug-patho-controller.tpl");
 	} else if (strpos($_SERVER['REQUEST_URI'], 'debug-symptpatho-controller')) { // Debug-user-controller
-		include_once("scripts_php/content-pages/DebugSymptPathoController.php");
+		include_once(dirname( __FILE__ ) . "/scripts_php/content-pages/DebugSymptPathoController.php");
 		$smarty->assign(array(
 			'allSymptPathos' => $allSymptPathos,
 			'symptpathoIdS' => $symptpathoIdS,
@@ -85,14 +84,14 @@
 			'userEmailUpdate' => $userEmailUpdate,
 			'symptpathoDelete' => $symptpathoDelete
 		));
-		$smarty->display("views/content-pages/debug-user-controller.tpl");} 
+		$smarty->display(dirname( __FILE__ ) . "/views/content-pages/debug-user-controller.tpl");} 
 	else { // Default
-		include_once("scripts_php/content-pages/FluxRss.php");
+		include_once(dirname( __FILE__ ) . "/scripts_php/content-pages/FluxRss.php");
 		$smarty->assign(array(
 			'arrayRss' => $arrayRss
 		));
-		$smarty->display("views/content-pages/home.tpl");
+		$smarty->display(dirname( __FILE__ ) . "/views/content-pages/home.tpl");
 	} 
 
-	$smarty->display("views/components/footer.tpl");
+	$smarty->display(dirname( __FILE__ ) . "/views/components/footer.tpl");
 ?>

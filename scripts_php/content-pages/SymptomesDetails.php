@@ -1,6 +1,6 @@
 <?php
-	include_once("controllers/SymptomeController.php");
-	include_once("controllers/PathoController.php");
+	include_once(dirname( __FILE__ ) . "/../../controllers/SymptomeController.php");
+	include_once(dirname( __FILE__ ) . "/../../controllers/PathoController.php");
 
 	function getDetailsPatho($idP) {
 		$PathoController = new PathoController();

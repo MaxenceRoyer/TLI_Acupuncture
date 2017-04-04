@@ -3,7 +3,7 @@
 
 	if (isset($_GET["email"]) && isset($_GET["password"])) {
 		if (!empty($_GET["email"]) && !empty($_GET["password"])) {
-			include_once("../../controllers/UserController.php");
+			include_once(dirname( __FILE__ ) . "/../../controllers/UserController.php");
 			
 			$UserController = new UserController();
 			
@@ -14,9 +14,9 @@
 				$_SESSION["SessionIsOpen"] = true;
 				$_SESSION["User"] = $UserController->getUserByEmail($_GET["email"]);
 				
-				echo "true";
+				return true;
 			} else {
-				echo "false";
+				return false;
 			}
 		}
 	}

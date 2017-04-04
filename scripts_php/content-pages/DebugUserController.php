@@ -1,5 +1,5 @@
 <?php
-	include_once("controllers/UserController.php");
+	include_once(dirname( __FILE__ ) . "/../controllers/UserController.php");
 
 	$UserController = new UserController();
 
