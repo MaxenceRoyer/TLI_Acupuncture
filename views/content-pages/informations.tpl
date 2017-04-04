@@ -5,7 +5,7 @@
 				  <h4>Présentation</h4>
 				  <p>
 					  Ce site a été développé dans le cadre d'un projet du module de Technologies et Langages de l'Internet  (TLI), et de la formation IRC dispensée à CPE Lyon. <br /><br />
-					  Il s'agit d'un site destiné à <b>l’Association des Acupuncteurs soucieux de l’Accessibilité (AAA)</b> devant leur premettre de :
+					  Il s'agit d'un site destiné à <b>l’Association des Acupuncteurs soucieux de l’Accessibilité (AAA)</b> devant leur permettre :
 				  </p>
 				  <ul>
 				  	  <li>De disposer d’un service en ligne leur permettant de consulter la liste des symptômes des
@@ -20,7 +20,7 @@ principales pathologies en acupuncture</li>
 			  <section class="stripped">
 				  <h4>Participants</h4>
 				  <p>
-					  Ce site a été développé par 4 étudiants en 4IRC : Maxence Royer, Camille Cordier, Delorme Claire et Sébastien Urbe. Il s'agit d'un groupe mixte constitué de 2 étudiants de majeure informatique et de 2 de majeure réseaux et télécoms.
+					  Ce site a été développé par 4 étudiants en 4IRC : Maxence Royer, Camille Cordier, Claire Delorme et Sébastien Urbe. Il s'agit d'un groupe mixte constitué de 2 étudiants de majeure informatique et de 2 de majeure réseaux et télécoms.
 				  </p>
 			  </section>
 			  <section class="stripped">
