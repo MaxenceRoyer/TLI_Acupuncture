@@ -14,9 +14,9 @@
 				$_SESSION["SessionIsOpen"] = true;
 				$_SESSION["User"] = $UserController->getUserByEmail($_GET["email"]);
 				
-				echo "true";
+				return true;
 			} else {
-				echo "false";
+				return false;
 			}
 		}
 	}

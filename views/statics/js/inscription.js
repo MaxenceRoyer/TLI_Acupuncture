@@ -1,63 +1,79 @@
-function userInscription(var formInscription) {
-	var req = new XMLHttpRequest();
-	
-	var email = formInscription.email.value;
-	var password = formInscription.password.value;
-	
-	if (email.length > 0 && password.length > 0) {
-		deleteBordersInputForms();
-		changeIHMErrorMessage("");
-		
-		req.open('GET', 'http://localhost/tli-acupuncture/scripts_php/forms/connection.php?email='.concat(email).concat("&&password=").concat(calcMD5(password)), true);
-		req.onreadystatechange = function (aEvt) {
-		  if (req.readyState == 4) {
-			 if (req.status == 200) {
-				 if (req.responseText == "true") {
-					 // Reload of the page - because the session is created
-					 window.location.reload(true);
-				 } else {
-				     clearPasswordField();
-					 changeIHMErrorMessage("Mauvaise combinaison e-mail / mot de passe");
-				 }
-			 } else {
-				 changeIHMErrorMessage("Erreur pendant le chargement de la page.");
-			 }
-		  }
-		};
-		req.send(null);
-	} else { 
-		deleteBordersInputForms();
-		changeIHMErrorMessage("");
-
-		if (email.length == 0) {
-			changeIHMErrorMessage("Champ adresse e-mail manquant ...");	
-			formInscription.email.style.border = "1px solid #e74c3c";
-		} else {
-			changeIHMErrorMessage("Champ mot de passe manquant ...");	
-			formInscription.password.style.border = "1px solid #e74c3c";
-		}
-	}
+function changeIHMErrorMessage(valueToSet) {
+    'use strict';
+    document.getElementById("errorInsc").innerHTML = valueToSet;
 }
 
-function checkEmail(var formInscription) {
-	if (formInscription.confirm_email_addr.value != formInscription.email_addr.value) {
-		formInscription.confirm_email_addr.setCustomValidity("Les e-mails entrés ne sont pas identiques");
-	} else {
-		formInscription.confirm_email_addr.setCustomValidity("");
-	}
+function checkEmail(formInscription) {
+    'use strict';
+    if (formInscription.confirm_email_inscription.value !== "" && formInscription.email_inscription.value !== "") {
+        if (formInscription.confirm_email_inscription.value !== formInscription.email_inscription.value) {
+            formInscription.confirm_email_inscription.setCustomValidity("Les e-mails entrés ne sont pas identiques");
+            changeIHMErrorMessage("Les e-mails entrés ne sont pas identiques");
+        } else {
+            formInscription.confirm_email_inscription.setCustomValidity("");
+            changeIHMErrorMessage("");
+        }
+    }
 }
 
-function checkPassword(var formInscription) {
-	if (formInscription.confirm_password.value != formInscription.password.value) {
-		formInscription.confirm_password.setCustomValidity("Les mot de passe entrés ne sont pas identiques");
-	} else {
-		formInscription.confirm_password.setCustomValidity("");
-	}
+function checkPassword(formInscription) {
+    'use strict';
+    if (formInscription.confirm_password_inscription.value !== "" && formInscription.password_inscription.value !== "") {
+        if (formInscription.confirm_password_inscription.value !== formInscription.password_inscription.value) {
+            formInscription.confirm_password_inscription.setCustomValidity("Les mot de passe entrés ne sont pas identiques");
+            changeIHMErrorMessage("Les mot de passe entrés ne sont pas identiques");
+        } else {
+            formInscription.confirm_password_inscription.setCustomValidity("");
+            changeIHMErrorMessage("");
+        }
+    }
 }
 
-window.addEventListener("load", function() {
+function checkUserDispoOrCreateUser(formInscription) {
+    'use strict';
+    var req, identifiant, email, password;
+    req = new XMLHttpRequest();
+    identifiant = formInscription.identifiant_inscription.value;
+    email = formInscription.email_inscription.value;
+    password = formInscription.password_inscription.value;	
+	var test = new Date();
+    console.log("get");
+    req.open('GET', 'scripts_php/forms/inscription.php?identifiant_inscription='.concat(identifiant).concat("&&email_inscription=").concat(email).concat("&&password_inscription=").concat(calcMD5(password)), true);
+    req.onreadystatechange = function (aEvt) {
+        if (req.readyState === 4) {
+            if (req.status === 200) {
+                if (req.responseText === "userCreated") {
+                    // none display the form
+                    formInscription.style.display = "None";
+                    document.getElementById("successInsc").innerHTML = "Utilisateur créé";
+                    return false;
+                } else if (req.responseText === "emailAndPseudoAlreadyExist") {
+                    formInscription.identifiant_inscription.setCustomValidity("Ce pseudo est déjà utilisé.");
+                    formInscription.email_inscription.setCustomValidity("Cet email est déjà utilisé.");
+                    changeIHMErrorMessage("Cet email et ce pseudo sont déjà utilisés.");
+                    return false;
+                } else if (req.responseText === "emailAlreadyExist") {
+                    formInscription.identifiant_inscription.setCustomValidity("");
+                    formInscription.email_inscription.setCustomValidity("Cet email est déjà utilisé.");
+                    changeIHMErrorMessage("Cet email est déjà utilisé.");
+                    return false;
+                } else if (req.responseText === "PseudoAlreadyExist") {
+                    formInscription.email_inscription.setCustomValidity("");
+                    formInscription.identifiant_inscription.setCustomValidity("Ce pseudo est déjà utilisé.");
+                    changeIHMErrorMessage("Ce pseudo est déjà utilisé.");
+                    return false;
+                }
+            }
+        }
+    };
+    req.send(null);
+    formInscription.identifiant_inscription.setCustomValidity("");
+    return false;
+}
+
+window.addEventListener("load", function () {
+    'use strict';
 	var formInscription = document.getElementById("Inscription");
-	formInscription.confirm_email_addr.addEventListener("input", checkEmail(formInscription));
-    
-    formInscription.confirm_password.addEventListener("input", checkPassword(formInscription));
+	formInscription.confirm_email_inscription.addEventListener("input", checkEmail(formInscription));
+    formInscription.confirm_password_inscription.addEventListener("input", checkPassword(formInscription));
 });
