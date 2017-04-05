@@ -212,6 +212,11 @@
 	.button_my_style_blue:hover {
 		background-color: #2980b9;
 	}
+	
+	input[type="submit"]:disabled {
+		background-color: #bdc3c7;
+		cursor: default;
+	}
 
 	.clear_both {
 		clear: both;
@@ -336,6 +341,12 @@
 
 	.span_error {
 		color: #e74c3c;
+		font-size : 8pt;
+		font-weight: bold;
+	}
+	
+	.span_success {
+		color: #27ae60;
 		font-size : 8pt;
 		font-weight: bold;
 	}

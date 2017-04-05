@@ -13,10 +13,10 @@
 				// Creation of the user session
 				$_SESSION["SessionIsOpen"] = true;
 				$_SESSION["User"] = $UserController->getUserByEmail($_GET["email"]);
-				
-				return true;
+
+				echo "true";
 			} else {
-				return false;
+				echo "false";
 			}
 		}
 	}

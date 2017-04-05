@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-04-04 17:21:19
+/* Smarty version 3.1.30, created on 2017-04-05 11:52:22
   from "C:\wamp64\www\tli-acupuncture\views\content-pages\pathologies.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58e3d60ff059b6_94822430',
+  'unifunc' => 'content_58e4da760b9343_47485631',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bb5f0dc9db6556aadc0bfceeff588ff50d28d30a' => 
     array (
       0 => 'C:\\wamp64\\www\\tli-acupuncture\\views\\content-pages\\pathologies.tpl',
-      1 => 1491325970,
+      1 => 1491327369,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58e3d60ff059b6_94822430 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58e4da760b9343_47485631 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 		  <!-- Content -->
           <div id="content_page" role="main">

@@ -6,7 +6,6 @@ include_once(dirname( __FILE__ ) . "/../models/User.class.php");
  * I belong to a class
  */
 class UserController extends Bdd {	
-	// Construct
 	/**
 	 * Constructor
 	 */
@@ -34,7 +33,7 @@ class UserController extends Bdd {
 			$req = Bdd::prepare($sql);
 			if (Bdd::execute($req, array($email))) {
 				if ($row = $req->fetch()) {
-					if (md5($row["passwordU"]) == $passwordMd5) {
+					if ($row["passwordU"] == $passwordMd5) {
 						return true;
 					}
 				} else {

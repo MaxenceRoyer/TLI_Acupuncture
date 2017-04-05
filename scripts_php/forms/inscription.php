@@ -12,7 +12,7 @@
                 else {
                     echo "emailAlreadyExist";
                 }
-            }else{
+            } else{
                 if ($UserController->isPseudoExist($_GET["identifiant_inscription"])) {
                     echo "PseudoAlreadyExist";
                 } else{
@@ -21,7 +21,9 @@
                     echo "userCreated";
                 }
             }
-		} else {echo false;}
+		} else {
+			echo false;
+		}
 	} else {
         echo false;
     }

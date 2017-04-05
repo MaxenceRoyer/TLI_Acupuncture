@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-04-04 17:21:01
+/* Smarty version 3.1.30, created on 2017-04-04 17:47:29
   from "C:\wamp64\www\tli-acupuncture\views\content-pages\home.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58e3d5fd420d57_66481913',
+  'unifunc' => 'content_58e3dc31a0e883_32653298',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6bdc32ce03a2a10302a001eba2509c10afa954fc' => 
     array (
       0 => 'C:\\wamp64\\www\\tli-acupuncture\\views\\content-pages\\home.tpl',
-      1 => 1491325970,
+      1 => 1491327369,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58e3d5fd420d57_66481913 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58e3dc31a0e883_32653298 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 		<!-- Content -->
 		<div id="content_page" role="main">

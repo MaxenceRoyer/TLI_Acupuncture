@@ -48,6 +48,7 @@ function deleteBordersInputForms() {
 }
 
 function changeIHMErrorMessage(valueToSet) {
+	console.log(valueToSet);
 	document.getElementById("spanForm").innerHTML = valueToSet;
 }
 
