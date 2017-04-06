@@ -31,7 +31,7 @@
 			  <section class="stripped">
 				  <h3>Division</h3>
 				  <p>
-					  <b>URL</b> : ...calculatrice/division/<b>[NUMBER_1]</b>/<b>[NUMBER_2]</b>
+					  <b>URL</b> : .../tli-acupuncture/soap/calculatrice/division/<b>[NUMBER_1]</b>/<b>[NUMBER_2]</b>
 				  </p>
 				  <p>
 					  <b>Exemple</b> : <a href="calculatrice/division/10/3" title="Exemple de division" target="_blank" tabindex="35">calculatrice/division/10/3</a>
