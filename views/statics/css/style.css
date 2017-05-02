@@ -408,4 +408,9 @@
 	.text_align_center {
 		text-align: center;
 	}
+	
+	.adjust_content_page {
+		float: none;
+		width: 100%;
+	}
 }

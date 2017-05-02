@@ -1,7 +1,7 @@
 		  <!-- Content -->
           <div id="content_page" role="main">
 			  <section class="stripped">
-				  <h1>Liste des pathologies</h1>
+				  <h2>Liste des pathologies</h2>
 				  {if !empty($userSession)}
 				  	<span class="span_error" id="spanSearchPathoError"></span>
 				  	<input type="search" placeholder="Entrez un mot-clef" id="searchPatho" name="searchPatho" tabindex="21">
@@ -28,7 +28,7 @@
 								  <td class="descPatho">{$patho->getDesc()}</td>
 								  <td class="imgPatho">
 									  <a href="detailsSymptomes_{$patho->getIdP()}">
-										  <img src="views/statics/img/view.png" title="Voir les symptomes" class="img_symptomes">
+										  <img src="views/statics/img/view.png" alt="Voir les symptomes" class="img_symptomes">
 									  </a>								  
 								  </td>
 							  </tr>

@@ -1,6 +1,7 @@
 		  <!-- Content -->
           <div id="content_page" role="main">
 			  <section class="stripped">
+				  <h3>Navigation</h3>
 				  <p>
 					  <a href="pathologies">Revenir à la liste des pathologies</a>
 				  </p>

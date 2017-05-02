@@ -30,7 +30,7 @@
 		));
 		$smarty->display(dirname( __FILE__ ) . "/views/content-pages/home.tpl");
 	} else if (strpos($_SERVER['REQUEST_URI'], 'pathologies')) { // Pathologies
-		include_once(dirname( __FILE__ ) . "/scripts_php/content-pages/DebugPathoController.php");
+		include_once(dirname( __FILE__ ) . "/scripts_php/content-pages/PathoController.php");
 		$smarty->assign(array(
 			'allPatho' => $allPatho
 		));

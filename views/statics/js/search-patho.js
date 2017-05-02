@@ -1,5 +1,5 @@
 function searchPathoFunction() {
-	var URL_script = "http://localhost/tli-acupuncture/scripts_php/forms/search-patho.php";	
+	var URL_script = "/tli-acupuncture/scripts_php/forms/search-patho.php";	
 	var keyword = document.getElementById("searchPatho").value;
 	var tablePathos = document.getElementById("containerPathoTable");
 	

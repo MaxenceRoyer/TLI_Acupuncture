@@ -80,7 +80,7 @@
 		
 		public function getSymptomesByIdPatho($idP) {
 			try {
-				$sql =  "SELECT symptome.idS, symptome.desc FROM symptome, patho, symptpatho WHERE symptome.idS = symptPatho.idS and patho.idP = symptPatho.idP and patho.idP LIKE ? ORDER BY symptome.idS";
+				$sql =  "SELECT symptome.idS, symptome.desc FROM symptome, patho, symptpatho WHERE symptome.idS = symptpatho.idS and patho.idP = symptpatho.idP and patho.idP LIKE ? ORDER BY symptome.idS";
 
 				$req = Bdd::prepare($sql);
 				if (Bdd::execute($req, array($idP))) {

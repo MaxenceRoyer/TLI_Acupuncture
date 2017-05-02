@@ -9,7 +9,7 @@ function userInitiateConnexion() {
 		deleteBordersInputForms();
 		changeIHMErrorMessage("");
 		
-		req.open('GET', 'http://localhost/tli-acupuncture/scripts_php/forms/connection.php?email='.concat(email).concat("&&password=").concat(calcMD5(password)), true);
+		req.open('GET', '/tli-acupuncture/scripts_php/forms/connection.php?email='.concat(email).concat("&&password=").concat(calcMD5(password)), true);
 		req.onreadystatechange = function (aEvt) {
 		  if (req.readyState == 4) {
 			 if (req.status == 200) {
@@ -48,7 +48,6 @@ function deleteBordersInputForms() {
 }
 
 function changeIHMErrorMessage(valueToSet) {
-	console.log(valueToSet);
 	document.getElementById("spanForm").innerHTML = valueToSet;
 }
 

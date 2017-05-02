@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <title>Association des acupuncteurs</title>
 		<link rel="shortcut icon" type="image/ico" href="http://localhost/tli-acupuncture/views/statics/img/favicon.png" />
@@ -13,4 +13,4 @@
     <body>
         <div id="content">
           <!-- Ban -->
-          <header role="banner"></header>
+          <header></header>
