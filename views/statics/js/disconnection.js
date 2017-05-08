@@ -1,7 +1,7 @@
 function userDestroySession() {
 	var req = new XMLHttpRequest();
 	
-	req.open('GET', 'http://localhost/tli-acupuncture/scripts_php/forms/disconnection.php', true);
+	req.open('GET', '/tli-acupuncture/scripts_php/forms/disconnection.php', true);
 	req.onreadystatechange = function (aEvt) {
 	  if (req.readyState == 4) {
 		 if (req.status == 200) {

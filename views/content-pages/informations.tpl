@@ -33,7 +33,7 @@ principales pathologies en acupuncture</li>
 					  Tutoriel developpez.com - SOAP</a>
 				  </p>
 				  <p>
-					  Flux RSS utilisé pour la page d'index : <a href="http://www.allodocteurs.fr/rss.xml" target="_blank">AlloDocteurs.fr</a>
+					  Flux RSS utilisé pour la page d'index : <a href="http://www.lemonde.fr/sante/rss_full.xml" target="_blank">LeMonde.fr - Flux Santé</a>
 				  </p>
 			  </section>
 			  <section class="stripped">

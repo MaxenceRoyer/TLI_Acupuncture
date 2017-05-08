@@ -89,7 +89,7 @@ function checkUserDispoOrCreateUser(formInscription) {
 			identifiant = formInscription.identifiant_inscription.value, 
 			email = formInscription.email_inscription.value, 
 			password = formInscription.password_inscription.value;
-		req.open('GET', 'scripts_php/forms/inscription.php?identifiant_inscription='.concat(identifiant).concat("&&email_inscription=").concat(email).concat("&&password_inscription=").concat(calcMD5(password)), true);
+		req.open('GET', '/tli-acupuncture/scripts_php/forms/inscription.php?identifiant_inscription='.concat(identifiant).concat("&&email_inscription=").concat(email).concat("&&password_inscription=").concat(calcMD5(password)), true);
 		req.onreadystatechange = function (aEvt) {
 			if (req.readyState === 4) {
 				if (req.status === 200) {

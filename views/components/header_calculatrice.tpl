@@ -12,5 +12,5 @@
     </head>
     <body>
         <div id="content">
-          <!-- Ban -->
-          <header role="banner" class="banner_calculatrice"></header>
+			<!-- Ban -->
+			<header class="banner_calculatrice"></header>

@@ -1,5 +1,5 @@
 <!-- Navigation bar -->
-<nav role="navigation"> 
+<nav> 
     <ul>
         <li><a href="index" tabindex="1">Accueil</a></li>
         <li><a href="pathologies" tabindex="2">Pathologies</a></li>
