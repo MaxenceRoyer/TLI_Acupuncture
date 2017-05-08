@@ -1,180 +1,410 @@
 @media screen and (max-width:600px) {
-	#authentication {
-	width: 100%;
-	}
+    #authentication {
+        width: 100%;
+    }
 
-	#content_page {
-	width: 100%;
-	}
+    #content_page {
+        width: 100%;
+    }
 
-	input[type="email"], input[type="text"], input[type="password"], input[type="search"] {
-	width: 40%;
-	}
+    input[type="email"], input[type="text"], input[type="password"], input[type="search"] {
+        width: 40%;
+    }
 }
 
 @media screen and (min-width:601px) and (max-width:900px) {
-	body {
-	padding: 0%;
-	} 
+    body {
+        padding: 0%;
+    } 
 
-	#authentication {
-	float: left;
-	position: relative;
-	width: 30%;
-	}
+    #authentication {
+        float: left;
+        position: relative;
+        width: 30%;
+    }
 
-	#content_page {
-	float: right;
-	position: relative;
-	width: 70%;
-	margin-top: 15pt;
-	}
+    #content_page {
+        float: right;
+        position: relative;
+        width: 70%;
+        margin-top: 15pt;
+    }
 
-	input[type="email"], input[type="text"], input[type="password"], input[type="search"] {
-	width: 80%;
-	}
+    input[type="email"], input[type="text"], input[type="password"], input[type="search"] {
+        width: 80%;
+    }
 }
 
 @media screen and (min-width:901px) {
-	body {
-	padding: 0% 12% 0% 12%;
-	}
+    body {
+        padding: 0% 12% 0% 12%;
+    }
 
-	#authentication {
-	width: 30%;
-	position: relative;
-	float: left;
-	box-shadow: 0 0 4pt #333;
-	-webkit-box-shadow: 4pt 4pt 4pt -2pt #999;
-		box-shadow: 4pt 4pt 4pt -2pt #999;
-	} 
+    #authentication {
+        width: 30%;
+        position: relative;
+        float: left;
+                box-shadow: 0 0 4pt #333;
+        -webkit-box-shadow: 4pt 4pt 4pt -2pt #999;
+                box-shadow: 4pt 4pt 4pt -2pt #999;
+    } 
 
-	#content_page {
-	float: right;
-	position: relative;
-	width: 70%;
-	}
+    #content_page {
+        float: right;
+        position: relative;
+        width: 70%;
+    }
 
-	input[type="email"], input[type="text"], input[type="password"], input[type="search"] { 
-	width: 80%;
-	}
+    input[type="email"], input[type="text"], input[type="password"], input[type="search"] { 
+        width: 80%;
+    }
 }
 
 /** Page view to print */
 
 @media print {
-	#content_page {
-	width: 100%;
-	}
+    #content_page {
+        width: 100%;
+    }
 
-	footer, header, nav, #authentication {
-	display: none;
-	}
+    footer, header, nav, #authentication, #Inscription {
+        display: none;
+    }
+    
+    .rss_icon, .span_error, .img_symptomes {
+        display: none;
+    }
 }
 
 @media not print {
-	body {
-	background-color: #ecf0f1;
-	background-image: url('../img/background_style.jpg');
-	background-repeat: repeat;
-	color: black;
-	font-family: 'Raleway', sans-serif;
-	margin: 0pt;
-	}
+    body {
+        background-color: #ecf0f1;
+        background-image: url('../img/background_style.jpg');
+        background-repeat: repeat;
+        color: black;
+        font-family: 'Raleway', sans-serif;
+        margin: 0pt;
+    }
 
-	h1, h2 {
-	font-size: 22pt;
-	}
+    h1, h2 {
+        font-size: 22pt;
+    }
 
-	header {
-	width: 100%;
-	height: 263pt;
-	background-image: url('../img/ban.png');
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	}
+    header {
+        width: 100%;
+        height: 263pt;
+        background-image: url('../img/ban.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 
-	.banner_calculatrice {
-		background-image: url('../img/ban_calc.png');
-	}
+    .banner_calculatrice {
+        background-image: url('../img/ban_calc.png');
+    }
 
-	/* Barre de navigation */
+    /* Barre de navigation */
 
-	nav ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	border: 1pt solid #e7e7e7;
-	background-color: #f3f3f3;
-	}
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border: 1pt solid #e7e7e7;
+        background-color: #f3f3f3;
+    }
 
-	nav li {
-	float: left;
-	}
+    nav li {
+        float: left;
+    }
 
-	nav li a {
-	display: block;
-	color: #111;
-	text-align: center;
-	padding: 10pt 12pt;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-weight: 500;
-	}
+    nav li a {
+        display: block;
+        color: #111;
+        text-align: center;
+        padding: 10pt 12pt;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
 
-	nav li a:hover:not(.active) {
-	background-color: #ddd;
-	}
+    nav li a:hover:not(.active) {
+        background-color: #ddd;
+    }
 
-	nav li a.active {
-	color: white;
-	background-color: #4CAF50;
-	}
+    nav li a.active {
+        color: white;
+        background-color: #4CAF50;
+    }
 
-	/* Fin de barre de navigation */
+    /* Fin de barre de navigation */
 
-	#content {
-	background-color: white;
-	box-shadow: 0 0 4pt #999;
-	}
+    #content {
+        background-color: white;
+        box-shadow: 0 0 4pt #999;
+    }
 
-	input {
-	margin: 4pt; 
-	}
+    input {
+        margin: 4pt; 
+    }
 
-	#authentication {
-	text-align: center;
-	background-color: #fafafa;
-	padding:1%;
-	   -moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-		-ms-box-sizing: border-box;
-		 -o-box-sizing: border-box;
-			box-sizing: border-box;    
-	} 
+    #authentication {
+        text-align: center;
+        background-color: #fafafa;
+        padding: 1%;
+           -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+             -o-box-sizing: border-box;
+        box-sizing: border-box;    
+    } 
 
-	input[type="email"], input[type="text"], input[type="password"], input[type="search"] {
-	margin: 4pt;
-	padding: 8pt;
-	text-align: center;
-	-webkit-border-radius: 4pt;
-	   -moz-border-radius: 4pt;
-			border-radius: 4pt; 
-	border: none;
-	color: black;
-	box-shadow: 0 0 1pt #999;
-	   -moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-		-ms-box-sizing: border-box;
-		 -o-box-sizing: border-box;
-			box-sizing: border-box;
-	 font-family: Calibri;
-	 font-size: 11pt;
-	 font-weight: bold;
-	 background-color: #ecf0f1;
-	}
+    input[type="email"], input[type="text"], input[type="password"], input[type="search"] {
+        margin: 4pt;
+        padding: 8pt;
+        text-align: center;
+        -webkit-border-radius: 4pt;
+           -moz-border-radius: 4pt;
+                border-radius: 4pt; 
+        border: none;
+        color: black;
+        box-shadow: 0 0 1pt #999;
+           -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+             -o-box-sizing: border-box;
+                box-sizing: border-box;
+        font-family: Calibri;
+        font-size: 11pt;
+        font-weight: bold;
+        background-color: #ecf0f1;
+    }
+
+    #content_page {
+        text-align: center;
+    }
+
+    .button_my_style {
+        background-color: #2ecc71;
+        color: white;
+        border: none;
+        padding: 6pt;
+        font: bold;
+        -webkit-border-radius: 4pt 16pt 4pt;
+           -moz-border-radius: 4pt 16pt 4pt;
+                border-radius: 4pt 16pt 4pt; 
+        cursor: pointer;
+    }
+
+    .button_my_style:hover {
+        background-color: #27ae60;
+    }
+
+    .button_my_style_blue {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 8pt;
+        font-weight: bold;
+        -webkit-border-radius: 4pt;
+           -moz-border-radius: 4pt;
+                border-radius: 4pt; 
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+
+    .button_my_style_blue:hover {
+        background-color: #2980b9;
+    }
+
+    .clear_both {
+        clear: both;
+    }
+
+    footer {
+        clear: both;
+        margin-top: 37pt;
+    }
+
+    .footer_general {
+        background-color: #1E2024;
+        padding: 8pt;
+    }
+
+    .footer_general p {
+        color: white;
+        font-weight: bold;
+        font-size: 9pt;
+        text-align: justify;
+        padding: 6pt;
+        margin: 3pt;
+    }
+
+    a {
+        color: #555;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #111;
+    }
+
+    a b {
+        color: #34495e;
+    }
+
+    #Inscription > ul {
+        list-style-type: none;
+    }
+
+    #Inscription > ul > li {
+        margin: 8pt;
+    }
+
+    #Inscription, .debug, .stripped {
+        border: 1pt dashed #bdc3c7;
+        margin: 5%;
+        word-wrap: break-word;
+    }
+
+    .stripped p {
+        text-align: justify;
+        padding-right: 2%;
+        padding-left: 2%;
+    }
+
+    .stripped ul {
+        margin: 2%;	
+    }
+
+    .stripped li {
+        text-align: justify;
+    }
+
+    ::-webkit-input-placeholder {
+        color: #666;
+    }
+
+    :-moz-placeholder { 
+        color: #666;  
+    }
+
+    ::-moz-placeholder {  
+        color: #666;  
+    }
+
+    :-ms-input-placeholder {  
+        color: #666;  
+    }
+
+    table {
+        text-align: left;
+        margin: auto;
+        border-collapse: collapse;
+        margin-bottom: 22pt;
+    }
+
+    td, th {
+        padding-right: 8pt;
+        padding-left: 8pt;
+    }
+
+    th {
+        font-size: 11pt;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    table .idPatho {
+        width: 10%;
+    }
+
+    table .merPatho {
+        width: 10%;
+    }
+
+    table .typePatho {
+        width: 10%;
+    }
+
+    table .descPatho {
+        width: 55%;
+    }
+
+    table .imgPatho {
+        width: 15%;
+        text-align: center;
+    }
+
+    .span_error {
+        color: #e74c3c;
+        font-size : 8pt;
+        font-weight: bold;
+    }
+
+    #disconnect {
+        font-weight: bold;
+        font-size: 9pt;
+        text-transform: uppercase;
+        color: #111;
+    }
+
+    #disconnect:hover {
+        cursor: pointer;
+        color: #555;
+    }
+
+    #containerPatho {
+        max-height: 375pt;
+        overflow: auto;
+        margin-top: 24pt;
+    }
+
+    .rss_item {
+        margin: 16pt;
+        background-color: ghostwhite;
+        padding: 16pt;
+        text-align: justify;
+    }
+
+    .rss_item img {
+        -webkit-border-radius: 4pt;
+           -moz-border-radius: 4pt;
+                border-radius: 4pt; 
+        margin-right: 8pt;
+    }
+
+    .rss_item hr {
+        display: block;
+        height: 1pt;
+        border: 0;
+        border-top: 1pt solid #777;
+        padding: 0; 
+    }
+
+    .rss_item .rss_icon {
+        width: 16pt;
+    }
+
+    .img_404 {
+        width: 30%;
+        text-align: center;
+        margin-top: 32pt;
+    }
+
+    .img_symptomes {
+        width: 40%;
+    }
+
+    .text_align_center {
+        text-align: center;
+    }
+    
+    .lien {
+        display: none;
+    }
 
 	#content_page {
 		text-align: center;
@@ -407,10 +637,5 @@
 
 	.text_align_center {
 		text-align: center;
-	}
-	
-	.adjust_content_page {
-		float: none;
-		width: 100%;
 	}
 }
