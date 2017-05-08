@@ -15,3 +15,6 @@ Maxence : 35%
 Camille : 25%  
 Claire : 20%  
 Sébastien : 20%  
+# Documentation
+Les dossiers controllers/, database/ et models/ ont été documenté avec PhpDocumentor.  
+(Ouvrir le fichier index.html du dossier /documentation dans chaque répertoire pour y accéder)
