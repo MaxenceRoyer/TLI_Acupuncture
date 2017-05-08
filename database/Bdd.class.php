@@ -10,9 +10,9 @@ private static $connect = null;
 	 */
 	function __construct() {
 			// Security
-	    $host = "localhost";
+	    $host = "127.0.0.1";
 	    $login = "root";             
-	    $password = "root";
+	    $password = "ccms";
 	    $base = "acu";
 	     
 	    Bdd::getInstance($host, $login, $password, $base);
