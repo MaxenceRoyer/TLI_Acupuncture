@@ -11,7 +11,7 @@ Une deuxième partie du projet concerne la partie WS du projet fil rouge à savo
 Dans le cadre de ce projet, nous avons du fusionner 2 groupes de projet comme demandé par l'enseignant. Nous avons récupéré 80% du projet de Maxence et Camille. Ces deux étudiants étant en majeure informatique, le projet alors développé reposait sur une meilleure architecture et était bien plus avancé. De bonnes pratiques de développement (Architecture MVC, utilisation de git...) avaient également été mises en place là où Claire et Sébastien, en majeure réseau avaient plus de difficultés.  
 Les 20% derniers pourcentages se basent sur des portions de code du projet de Claire et Sébastien, essentiellement sur des fonctionnalités supplémentaires non encore développées par Camille et Maxence au moment de la fusion. 
 # Répartition 
-Maxence : --%  
-Camille : --%  
-Claire : --%  
-Sébastien : --%  
+Maxence : 35%  
+Camille : 25%  
+Claire : 20%  
+Sébastien : 20%  

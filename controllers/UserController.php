@@ -3,7 +3,7 @@ include_once(dirname( __FILE__ ) . "/../database/Bdd.class.php");
 include_once(dirname( __FILE__ ) . "/../models/User.class.php");
 
 /**
- * I belong to a class
+ * The User Controller to access to the database
  */
 class UserController extends Bdd {	
 	/**
@@ -14,17 +14,14 @@ class UserController extends Bdd {
 	}
 	
 	/**
-	 * Function called to try to connect an user
+	 * Function called to know if a user can connect it
 	 *
-	 * A *description*, that can span multiple lines, to go _in-depth_ into the details of this element
-	 * and to provide some background information or textual references.
+	 * This function check if *user can connect it* or not.
 	 *
-	 * @param string $passwordMd5 With a *description* of this argument, these may also
-	 *    span multiple lines.
-	 * @param string $email With a *description* of this argument, these may also
-	 *    span multiple lines.
+	 * @param string $passwordMd5  the *user account password*
+	 * @param string $email the *user email*
 	 *
-	 * @return boolean
+	 * @return boolean true if the user is ok to connect or false if not
 	 */
 	public function connect($passwordMd5, $email) {
 		try {
@@ -50,8 +47,7 @@ class UserController extends Bdd {
 	/**
 	 * Function called to recover all users of the DB
 	 *
-	 * A *description*, that can span multiple lines, to go _in-depth_ into the details of this element
-	 * and to provide some background information or textual references.
+	 * This function *recover all the users* from the database.
 	 *
 	 * @return boolean
 	 */
@@ -70,13 +66,11 @@ class UserController extends Bdd {
 	/**
 	 * Function called to recover a user by is ID
 	 *
-	 * A *description*, that can span multiple lines, to go _in-depth_ into the details of this element
-	 * and to provide some background information or textual references.
+	 * This function *recover a user by his id*.
 	 *
-	 * @param string $id With a *description* of this argument, these may also
-	 *    span multiple lines.
+	 * @param string $id, the user id
 	 *
-	 * @return boolean
+	 * @return $user, the user with the id
 	 */
 	public function getUserById($id) {
 		try {
@@ -100,15 +94,13 @@ class UserController extends Bdd {
 	}
 	
 	/**
-	 * Function called to recover a user by is email
+	 * Function called to recover a user by his email
 	 *
-	 * A *description*, that can span multiple lines, to go _in-depth_ into the details of this element
-	 * and to provide some background information or textual references.
+	 * This function *recover a user by his email*.
 	 *
-	 * @param string $email With a *description* of this argument, these may also
-	 *    span multiple lines.
+	 * @param string $email, the user email
 	 *
-	 * @return boolean
+	 * @return $user, the user corresponding to the email
 	 */
 	public function getUserByEmail($email) {
 		try{
@@ -132,15 +124,13 @@ class UserController extends Bdd {
 	}
 	
 	/**
-	 * Function called to recover a user by is pseudo
+	 * Function called to recover a user by his pseudo
 	 *
-	 * A *description*, that can span multiple lines, to go _in-depth_ into the details of this element
-	 * and to provide some background information or textual references.
+	 * This function *recover a user by his pseudo*.
 	 *
-	 * @param string $pseudo With a *description* of this argument, these may also
-	 *    span multiple lines.
+	 * @param string $pseudo, the user pseudo
 	 *
-	 * @return boolean
+	 * @return $user, the user with this pseudo
 	 */
 	public function getUserByPseudo($pseudo) {
 		try{
@@ -166,13 +156,11 @@ class UserController extends Bdd {
 	/**
 	 * Function called to verify if an email exist
 	 *
-	 * A *description*, that can span multiple lines, to go _in-depth_ into the details of this element
-	 * and to provide some background information or textual references.
+	 * This function check if an *email already exist in database*.
 	 *
-	 * @param string $email With a *description* of this argument, these may also
-	 *    span multiple lines.
+	 * @param string $email, the user email
 	 *
-	 * @return boolean
+	 * @return boolean, if exist or not
 	 */
 	public function isEmailExist($email) {
 		try{
@@ -198,13 +186,11 @@ class UserController extends Bdd {
 	/**
 	 * Function called to verify if a pseudo exist
 	 *
-	 * A *description*, that can span multiple lines, to go _in-depth_ into the details of this element
-	 * and to provide some background information or textual references.
+	 * This function check if a *pseudo already exist* in database.
 	 *
-	 * @param string $pseudo With a *description* of this argument, these may also
-	 *    span multiple lines.
+	 * @param string $pseudo, user pseudo
 	 *
-	 * @return boolean
+	 * @return boolean, if exist or not
 	 */
 	public function isPseudoExist($pseudo) {
 		try{
@@ -230,13 +216,11 @@ class UserController extends Bdd {
 	/**
 	 * Function called to create a user
 	 *
-	 * A *description*, that can span multiple lines, to go _in-depth_ into the details of this element
-	 * and to provide some background information or textual references.
+	 * This function *create a user*.
 	 *
-	 * @param string $user With a *description* of this argument, these may also
-	 *    span multiple lines.
+	 * @param string $user the user to create
 	 *
-	 * @return boolean
+	 * @return $user, the user created
 	 */
 	public function createUser($user) {
 		try {
@@ -262,15 +246,12 @@ class UserController extends Bdd {
 	/**
 	 * Function called to update a user email
 	 *
-	 * A *description*, that can span multiple lines, to go _in-depth_ into the details of this element
-	 * and to provide some background information or textual references.
+	 * This function *update a user by his email*.
 	 *
-	 * @param string $id With a *description* of this argument, these may also
-	 *    span multiple lines.
-	 * @param string $email With a *description* of this argument, these may also
-	 *    span multiple lines.
+	 * @param string $id, user id
+	 * @param string $email, user email
 	 *
-	 * @return boolean
+	 * @return $user, the user updated
 	 */
 	public function updateUserEmailById($id, $email) {
 		try{
@@ -292,17 +273,14 @@ class UserController extends Bdd {
 	}
 	
 	/**
-	 * Function called to update a user password
+	 * Function called to update a user password by the user id
 	 *
-	 * A *description*, that can span multiple lines, to go _in-depth_ into the details of this element
-	 * and to provide some background information or textual references.
+	 * This function *update a user password by his id*.
 	 *
-	 * @param string $id With a *description* of this argument, these may also
-	 *    span multiple lines.
-	 * @param string $password With a *description* of this argument, these may also
-	 *    span multiple lines.
+	 * @param string $id user, id
+	 * @param string $password, user new password
 	 *
-	 * @return boolean
+	 * @return $user, the user created
 	 */
 	public function updateUserPasswordById($id, $password) {
 		try{
@@ -323,15 +301,13 @@ class UserController extends Bdd {
 	}
 	
 	/**
-	 * Function called to delete a user by its id
+	 * Function called to delete a user by his id
 	 *
-	 * A *description*, that can span multiple lines, to go _in-depth_ into the details of this element
-	 * and to provide some background information or textual references.
+	 * This function *delete a user by his id*.
 	 *
-	 * @param string $id With a *description* of this argument, these may also
-	 *    span multiple lines.
+	 * @param string $id, the user id
 	 *
-	 * @return boolean
+	 * @return boolean, deleted or not
 	 */
 	public function deleteUserById($id) {
 		try{
