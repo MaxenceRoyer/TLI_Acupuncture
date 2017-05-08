@@ -18,3 +18,5 @@ Sébastien : 20%
 # Documentation
 Les dossiers controllers/, database/ et models/ ont été documenté avec PhpDocumentor.  
 (Ouvrir le fichier index.html du dossier /documentation dans chaque répertoire pour y accéder)
+# Utilisateur de tests
+Vous pouvez créer un compte ou utiliser par exemple : identifiant > maxence@live.fr / password > maxence.

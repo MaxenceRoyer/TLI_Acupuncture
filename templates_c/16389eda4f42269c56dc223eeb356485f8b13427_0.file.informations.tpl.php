@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-05-08 16:09:04
+/* Smarty version 3.1.30, created on 2017-05-08 19:34:43
   from "/opt/lampp/htdocs/tli-acupuncture/views/content-pages/informations.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_59107c00281245_11043666',
+  'unifunc' => 'content_5910ac33075776_10550506',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '16389eda4f42269c56dc223eeb356485f8b13427' => 
     array (
       0 => '/opt/lampp/htdocs/tli-acupuncture/views/content-pages/informations.tpl',
-      1 => 1493756922,
+      1 => 1494263811,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59107c00281245_11043666 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5910ac33075776_10550506 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 		  <!-- Content -->
           <div id="content_page" role="main">
@@ -57,7 +57,7 @@ principales pathologies en acupuncture</li>
 					  Tutoriel developpez.com - SOAP</a>
 				  </p>
 				  <p>
-					  Flux RSS utilisé pour la page d'index : <a href="http://www.allodocteurs.fr/rss.xml" target="_blank">AlloDocteurs.fr</a>
+					  Flux RSS utilisé pour la page d'index : <a href="http://www.lemonde.fr/sante/rss_full.xml" target="_blank">LeMonde.fr - Flux Santé</a>
 				  </p>
 			  </section>
 			  <section class="stripped">

@@ -86,7 +86,7 @@ class SymptomeController extends Bdd {
 	 */
 	public function getSymptomesByKeyWord($keyword) {
 		try {
-			$sql =  "SELECT patho.idP, patho.mer, patho.type, patho.desc FROM symptome, keywords, keySympt, symptPatho, patho WHERE symptome.idS = keySympt.idS and keywords.idK = keySympt.idK and symptome.idS = symptPatho.idS and patho.idP = symptPatho.idP and keywords.name LIKE ? ORDER BY patho.idP";
+			$sql =  "SELECT patho.idP, patho.mer, patho.type, patho.desc FROM symptome, keywords, keySympt, symptpatho, patho WHERE symptome.idS = keySympt.idS and keywords.idK = keySympt.idK and symptome.idS = symptpatho.idS and patho.idP = symptpatho.idP and keywords.name LIKE ? ORDER BY patho.idP";
 
 			$req = Bdd::prepare($sql);
 			$keywordLike = "%". $keyword ."%";
@@ -119,7 +119,7 @@ class SymptomeController extends Bdd {
 	 */
 	public function getSymptomesByIdPatho($idP) {
 		try {
-			$sql =  "SELECT symptome.idS, symptome.desc FROM symptome, patho, symptPatho WHERE symptome.idS = symptPatho.idS and patho.idP = symptPatho.idP and patho.idP LIKE ? ORDER BY symptome.idS";
+			$sql =  "SELECT symptome.idS, symptome.desc FROM symptome, patho, symptpatho WHERE symptome.idS = symptPatho.idS and patho.idP = symptPatho.idP and patho.idP LIKE ? ORDER BY symptome.idS";
 
 			$req = Bdd::prepare($sql);
 			if (Bdd::execute($req, array($idP))) {
