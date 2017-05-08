@@ -1,7 +1,8 @@
 <?php 
-	session_start();
-
+	// We have to include this class before the session_start()
 	include_once(dirname( __FILE__ ) . "/models/User.class.php");
+
+	session_start();
 
 	// Include smarty
 	include_once(dirname( __FILE__ ) . "/libs-smarty/Smarty.class.php");
